@@ -51,7 +51,6 @@ class Profile extends Component {
   handleLogout (e) {
     sessionStorage.clear()
     this.props.history.push('/strago/login')
-    
     return <Redirect to='/strago/login' />
   }
 

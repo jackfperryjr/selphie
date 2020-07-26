@@ -109,43 +109,50 @@ class Edit extends Component {
         }
 
         render =  <div className='container top-margin'>
-                    <div className='row'>
-                      <div className='col-sm-4 col-md-4'>
-                        <img className='img-character-profile' src={primary} alt={x.name} />
+                    <form name='character-form' id='character-form' encType='multipart/form-data' method='put'>
+                      <div className='row'>
+                        <div className='col-sm-4 col-md-4'>
+                          <img className='img-character-profile' src={primary} alt={x.name} />
+                        </div>
+                        <div className='col-sm-8 col-md-8'>
+                          <div className='input-group input-group-override'>
+                            <input type='text' className='form-control' defaultValue={x.name} placeholder='character name' />
+                          </div>
+                          <div className='input-group input-group-override'>
+                            <input type='text' className='form-control' defaultValue={x.japaneseName} placeholder='japanese name' />
+                          </div>
+                          <div className='input-group input-group-override'>
+                            <input type='text' className='form-control' defaultValue={x.age} placeholder='age'/>
+                          </div>
+                          <div className='input-group input-group-override'>
+                            <input type='text' className='form-control' defaultValue={x.gender} placeholder='gender'/>
+                          </div>
+                          <div className='input-group input-group-override'>
+                            <input type='text' className='form-control' defaultValue={x.race} placeholder='race'/>
+                          </div>
+                          <div className='input-group input-group-override'>
+                            <input type='text' className='form-control' defaultValue={x.job} placeholder='job'/>
+                          </div>
+                          <div className='input-group input-group-override'>
+                            <input type='text' className='form-control' defaultValue={x.height} placeholder='height'/>
+                          </div>
+                          <div className='input-group input-group-override'>
+                            <input type='text' className='form-control' defaultValue={x.weight} placeholder='weight'/>
+                          </div>
+                          <div className='input-group input-group-override'>
+                            <input type='text' className='form-control' defaultValue={x.origin} placeholder='origin'/>
+                          </div>
+                          <div className='input-group input-group-override'>
+                            <textarea className='character-form-control' defaultValue={x.description} placeholder='description'></textarea>
+                          </div>
+                        </div>
                       </div>
-                      <div className='col-sm-8 col-md-8'>
-                        <div className='input-group input-group-override'>
-                          <input type='text' className='form-control' defaultValue={x.name} placeholder='character name' />
-                        </div>
-                        <div className='input-group input-group-override'>
-                          <input type='text' className='form-control' defaultValue={x.japaneseName} placeholder='japanese name' />
-                        </div>
-                        <div className='input-group input-group-override'>
-                          <input type='text' className='form-control' defaultValue={x.age} placeholder='age'/>
-                        </div>
-                        <div className='input-group input-group-override'>
-                          <input type='text' className='form-control' defaultValue={x.gender} placeholder='gender'/>
-                        </div>
-                        <div className='input-group input-group-override'>
-                          <input type='text' className='form-control' defaultValue={x.race} placeholder='race'/>
-                        </div>
-                        <div className='input-group input-group-override'>
-                          <input type='text' className='form-control' defaultValue={x.job} placeholder='job'/>
-                        </div>
-                        <div className='input-group input-group-override'>
-                          <input type='text' className='form-control' defaultValue={x.height} placeholder='height'/>
-                        </div>
-                        <div className='input-group input-group-override'>
-                          <input type='text' className='form-control' defaultValue={x.weight} placeholder='weight'/>
-                        </div>
-                        <div className='input-group input-group-override'>
-                          <input type='text' className='form-control' defaultValue={x.origin} placeholder='origin'/>
-                        </div>
-                        <div className='input-group input-group-override'>
-                          <textarea className='character-form-control' defaultValue={x.description} placeholder='description'></textarea>
-                        </div>
+                      <div className='button-container'>
+                        <button type='cancel' title='Cancel' className='btn btn-secondary btn-profile'>Cancel</button>
+                        <button type='submit' title='Delete' className='btn btn-danger btn-profile'>Delete</button>
+                        <button type='submit' title='Save' className='btn btn-success btn-profile'>Save</button>
                       </div>
-                    </div>
+                    </form>
                   </div>
         }
         return render
