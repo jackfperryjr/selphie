@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Redirect} from 'react-router-dom'
+import * as utils from '../utility'
 
 class Add extends Component {
   constructor (props) {
@@ -10,11 +11,31 @@ class Add extends Component {
     }
   }
 
+  componentWillUnmount () {
+    this.setState = (state, callback) => {
+        return
+    }
+  }
+
   isLoggedIn () {
     if (sessionStorage.token && sessionStorage.token !== 'undefined') {
+      if (this.isTokenExpired(sessionStorage.token)) {
+        this.handleLogout()
+        return false
+      }
       return true
     } else {
       this.handleLogout()
+      return false
+    }
+  }
+
+  isTokenExpired () {
+    const token = utils.decodeJWT(sessionStorage.token).token
+    const date = new Date()
+    if (token.exp < date) {
+      return true
+    } else {
       return false
     }
   }
@@ -28,7 +49,7 @@ class Add extends Component {
   render () {
     let render
     
-    if (this.isLoggedIn()) {
+    if (this.isLoggedIn) {
       render =  <div className='container top-margin'>
                   <div className='row'>TODO: Build form to handle adding a character</div>
                 </div>

@@ -23,6 +23,12 @@ class Login extends Component {
     }
   }
 
+  componentWillUnmount () {
+    this.setState = (state, callback) => {
+        return
+    }
+  }
+
   validateForm () {
     if (this.state.username.length > 0 && this.state.username.length > 0) {
       return true

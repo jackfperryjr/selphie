@@ -21,7 +21,7 @@ class App extends Component {
             ? <nav className='navbar navbar-expand navbar-light'>
                 <span>
                   <Link to='/strago/index'><strong>MoogleApi - Characters</strong></Link>
-                  <Link to='/strago/add'><span className='character-add'><i class='fas fa-plus-circle fa-2x'></i></span></Link>
+                  <Link to='/strago/add'><span className='character-add'><i className='fas fa-plus-circle fa-2x'></i></span></Link>
                   <Link to='/strago/profile'><img className='img-navbar' src={user.photo} alt={user.userName}/></Link>
                 </span>
               </nav>

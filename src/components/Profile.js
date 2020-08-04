@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Redirect} from 'react-router-dom'
-import * as moment from 'moment'
+import moment from 'moment'
+import * as utils from '../utility'
 
 class Profile extends Component {
   constructor (props) {
@@ -20,11 +21,31 @@ class Profile extends Component {
     }
   }
 
+  componentWillUnmount () {
+    this.setState = (state, callback) => {
+        return
+    }
+  }
+
   isLoggedIn () {
     if (sessionStorage.token && sessionStorage.token !== 'undefined') {
+      if (this.isTokenExpired(sessionStorage.token)) {
+        this.handleLogout()
+        return false
+      }
       return true
     } else {
       this.handleLogout()
+      return false
+    }
+  }
+
+  isTokenExpired () {
+    const token = utils.decodeJWT(sessionStorage.token).token
+    const date = new Date()
+    if (token.exp < date) {
+      return true
+    } else {
       return false
     }
   }
@@ -115,7 +136,7 @@ class Profile extends Component {
   }
 
   render () {
-    if (this.isLoggedIn()) {
+    if (this.isLoggedIn) {
       const user = JSON.parse(sessionStorage.user)
       return (
         <header className='form-container'>
