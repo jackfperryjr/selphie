@@ -1,36 +1,16 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import { BrowserRouter as Redirect} from 'react-router-dom'
+import { useAuth } from '../context/auth'
 
-class Login extends Component {
-  constructor (props) {
-    super(props)
+function Login(props) {
+  const [isLoggedIn, setLoggedIn] = useState(false)
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
+  const [overlay, setOverlay] = useState(false)
+  const { setAuthToken } = useAuth()
 
-    this.state = {
-      username: '',
-      password: '',
-      user: {},
-      valid: false
-    }
-  }
-
-  componentDidMount () {
-    if (sessionStorage.token) {
-      let user = JSON.parse(sessionStorage.user);
-      this.setState({
-        valid: true,
-        user: user
-      })
-    }
-  }
-
-  componentWillUnmount () {
-    this.setState = (state, callback) => {
-        return
-    }
-  }
-
-  validateForm () {
-    if (this.state.username.length > 0 && this.state.username.length > 0) {
+  function validateForm () {
+    if (username.length > 0 && password.length > 0) {
       return true
     } else {
       document.getElementById('validation-error').style.display = 'block'
@@ -38,15 +18,15 @@ class Login extends Component {
     }
   }
 
-  handleLogin (e) {
+  function handleLogin (e) {
     e.preventDefault()
     document.getElementById('login-error').style.display = 'none'
     document.getElementById('validation-error').style.display = 'none'
-    if (this.validateForm()) {
-      const that = this
+    if (validateForm()) {
+      setOverlay(true)
       const payload = {
-        username: this.state.username,
-        password: this.state.password,
+        username: username,
+        password: password,
         audience: 'MoogleApi'
       }
       fetch('https://chocoboapi.azurewebsites.net/v1/account/login', {
@@ -59,14 +39,10 @@ class Login extends Component {
       }).then(response => response.json())
         .then(function(response){
           if (response.token) {
-            sessionStorage.setItem('token', response.token);
-            sessionStorage.setItem('user', JSON.stringify(response.user));
-            that.setState({
-              valid: true,
-              user: response.user
-            })
+            setAuthToken(response.token)
+            setLoggedIn(true)
+            localStorage.setItem('user', JSON.stringify(response.user))
           } else {
-            console.log('failed login')
             console.log(response.message)
             document.getElementById('login-error').style.display = 'block'
           }
@@ -76,29 +52,30 @@ class Login extends Component {
       }
   }
 
-  render () {
-    if (this.state.valid === true) {
-      this.props.history.push('/strago/index')
-      return <Redirect to='/strago/index' />
-    } else {
-      return (
-        <header className='form-container login-screen'>
-          <p>Enter credentials</p>
-          <form>
-            <div className='form-group'>
-              <input type='text' className='form-control login-username' placeholder='enter username' onChange={(e) => this.setState({ username: e.target.value })} />
-            </div>
-            <div className='form-group'>
-              <input type='password' className='form-control' placeholder='enter password' onChange={(e) => this.setState({ password: e.target.value })} />
-            </div>
-            <div id='login-error'>invalid credentials</div>
-            <div id='validation-error'>enter your credentials</div>
-            <button type='submit' className='btn btn-primary btn-block' onClick={(e) => this.handleLogin(e)}>Login</button>
-          </form>
-        </header>
-      )
-    }
+  if (isLoggedIn) {
+    props.history.push('/index')
+    return <Redirect to='/index' />
   }
+
+  return (
+    <div className='form-container login-screen'>
+      <div className='overlay' style={{display: (overlay) ? 'block' : 'none'}}>
+        <span className='loader text-primary'><i className='fas fa-circle-notch fa-spin fa-5x'></i></span>
+      </div>
+      <p>Enter credentials</p>
+      <form>
+        <div className='form-group'>
+          <input type='text' className='form-control login-username' placeholder='enter username' value={username} onChange={e => { setUsername(e.target.value) }} />
+        </div>
+        <div className='form-group'>
+          <input type='password' className='form-control' placeholder='enter password' value={password} onChange={e => { setPassword(e.target.value) }} />
+        </div>
+        <div id='login-error'>invalid credentials</div>
+        <div id='validation-error'>enter your credentials</div>
+        <button type='submit' className='btn btn-primary btn-block' onClick={(e) => handleLogin(e)}>Login</button>
+      </form>
+    </div>
+    )
 }
 
 export default Login

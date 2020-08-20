@@ -52,6 +52,13 @@
   object-fit: contain;
 }
 
+.img-character-profile-collection {
+  margin: 20px;
+  height: calc(50px + 5vmin);
+  width: calc(50px + 5vmin);
+  object-fit: contain;
+}
+
 .card-character {
   margin: 0 0 10px 0; 
 }
@@ -153,12 +160,6 @@ input[type="number"]:focus  {
   color: #000;
 }
 
-.loading {
-  position: fixed;
-  top: 40vh;
-  left: 45vw;
-}
-
 .form-container {
   margin: 100px 0 0 0;
   padding-top: 0;
@@ -202,6 +203,29 @@ input[type="number"]:focus  {
   margin: 5% auto 15px auto;
   width: 200px;
   max-width: 200px;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(5px);
+  background-color: rgba(255, 255, 255, .3);
+  z-index: 1000;
+}
+
+.loader {
+  position: fixed;
+  top: 40vh;
+  left: 46vw;
 }
 
 @media (min-width: 768px) {

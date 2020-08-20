@@ -1,96 +1,41 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import { BrowserRouter as Redirect} from 'react-router-dom'
 import moment from 'moment'
-import * as utils from '../utility'
+import Navbar from '../components/Navbar'
 
-class Profile extends Component {
-  constructor (props) {
-    super(props)
+function Profile(props) {
+  const [username, setUsername] = useState('')
+  const [email, setEmail] = useState('')
+  const [firstname, setFirstname] = useState('')
+  const [lastname, setLastname] = useState('')
+  const [age, setAge] = useState('')
+  const [birthdate, setBirthdate] = useState('')
+  const [city, setCity] = useState('')
+  const [state, setState] = useState('')
+  const [photo, setPhoto] = useState('')
+  const user = JSON.parse(localStorage.user)
 
-    this.state = {
-      username: '',
-      email: '',
-      firstname: '',
-      lastname: '',
-      age: '',
-      birthdate: '',
-      city: '',
-      state: '',
-      photo: '',
-      wallpaper: ''
-    }
+  function handleLogout () {
+    localStorage.clear()
+    return <Redirect to='/login' />
   }
 
-  componentWillUnmount () {
-    this.setState = (state, callback) => {
-        return
-    }
-  }
-
-  isLoggedIn () {
-    if (sessionStorage.token && sessionStorage.token !== 'undefined') {
-      if (this.isTokenExpired(sessionStorage.token)) {
-        this.handleLogout()
-        return false
-      }
-      return true
-    } else {
-      this.handleLogout()
-      return false
-    }
-  }
-
-  isTokenExpired () {
-    const token = utils.decodeJWT(sessionStorage.token).token
-    const date = new Date()
-    if (token.exp < date) {
-      return true
-    } else {
-      return false
-    }
-  }
-
-  handleResponseErrors (error) {
-    let password = error.Password
-    let cpassword = error.ConfirmPassword
-    let email = error.Email
-    let display = ''
-
-    if (email !==  undefined) {
-      display = email
-    }
-    if (password !== undefined) {
-      display += '<br/>' + password
-    }
-    if (cpassword !== undefined) {
-      display += '<br/>' + cpassword
-    }
-    document.getElementById('validation-error').innerHTML = display
-    document.getElementById('validation-error').style.display = 'block'
-  }
-
-  handleLogout (e) {
-    sessionStorage.clear()
-    this.props.history.push('/strago/login')
-    return <Redirect to='/strago/login' />
-  }
-
-  handleUserUpdate (e) {
+  function handleUserUpdate (e) {
     e.preventDefault()
-    const token = sessionStorage.token
-    const user = JSON.parse(sessionStorage.user)
-    if (this.validateForm()) {
+    const token = localStorage.token
+    const user = JSON.parse(localStorage.user)
+    if (validateForm()) {
       let payload = new FormData()
       payload.append('id', user.id)
-      payload.append('photo', (this.state.photo === '') ? user.photo : document.forms['profile-form']['upload-photo'].files[0])
-      payload.append('username', (this.state.username === '') ? user.userName : this.state.username)
-      payload.append('email', (this.state.email === '') ? user.email : this.state.email)
-      payload.append('firstname', (this.state.firstname === '') ? user.firstName : this.state.firstname)
-      payload.append('lastname', (this.state.lastname === '') ? user.lastName : this.state.lastname)
-      payload.append('age', (this.state.age === '') ? user.age : this.state.age)
-      payload.append('birthdate', (this.state.birthdate === '') ? user.birthDate : this.state.birthdate)
-      payload.append('city', (this.state.city === '') ? user.city : this.state.city)
-      payload.append('state', (this.state.state === '') ? user.state : this.state.state)
+      payload.append('photo', (photo === '') ? user.photo : document.forms['profile-form']['upload-photo'].files[0])
+      payload.append('username', (username === '') ? user.userName : username)
+      payload.append('email', (email === '') ? user.email : email)
+      payload.append('firstname', (firstname === '') ? user.firstName : firstname)
+      payload.append('lastname', (lastname === '') ? user.lastName : lastname)
+      payload.append('age', (age === '') ? user.age : age)
+      payload.append('birthdate', (birthdate === '') ? user.birthDate : birthdate)
+      payload.append('city', (city === '') ? user.city : city)
+      payload.append('state', (state === '') ? user.state : state)
       fetch('https://chocoboapi.azurewebsites.net/v1/manage/update', {
         method: 'put',
         headers: {
@@ -100,7 +45,7 @@ class Profile extends Component {
       }).then(response => response.json())
         .then(function(response) {
           if (response.user) {
-            sessionStorage.setItem('user', JSON.stringify(response.user));
+            localStorage.setItem('user', JSON.stringify(response.user));
           } else {
             console.log('update failed')
             console.log(response.errors)
@@ -111,7 +56,19 @@ class Profile extends Component {
     }
   }
 
-  validateForm() {
+  function handlePhotoUpload () {
+    document.getElementById('upload-photo').click()
+  }
+
+  function handleProfilePhotoChange (e) {
+    let img = URL.createObjectURL(e.target.files[0]);
+    if (img) {
+      document.getElementById('profile-photo').src = img
+      setPhoto(e.target.value)
+    }
+  }
+
+  function validateForm () {
     let error = 0
 
     if (error === 1) {
@@ -123,63 +80,46 @@ class Profile extends Component {
     }
   }
 
-  handlePhotoUpload = () => {
-    document.getElementById('upload-photo').click()
-  }
-
-  handleProfilePhotoChange (e) {
-    let img = URL.createObjectURL(e.target.files[0]);
-    if (img) {
-      document.getElementById('profile-photo').src = img
-      this.setState({ photo: e.target.value })
-    }
-  }
-
-  render () {
-    if (this.isLoggedIn) {
-      const user = JSON.parse(sessionStorage.user)
-      return (
-        <header className='form-container'>
-          <div className='profile-container'>
-            <img id='profile-photo' className='profile-photo' src={user.photo} alt={user.userName} onClick={this.handlePhotoUpload}/>
+  return (
+    <div>
+      <Navbar />
+      <div className='form-container'>
+        <div className='profile-container'>
+          <img id='profile-photo' className='profile-photo' src={user.photo} alt={user.userName} onClick={handlePhotoUpload}/>
+        </div>
+        <form name='profile-form' id='profile-form' className='profile-form' encType='multipart/form-data' method='put'>
+          <p className='font-weight-bold login-username'>{user.userName}</p>
+          <p className='font-small text-secondary'>Joined {moment(user.joinDate).format('MMMM DD, YYYY')}</p>
+          <div className='input-group input-group-override'>
+              <input type='text' className='form-control login-username' defaultValue={user.userName} placeholder='user name'  onChange={e => { setUsername(e.target.value) }} />
+              <span>&nbsp;</span>
+              <input type='text' className='form-control' defaultValue={user.email} placeholder='email' onChange={e => { setEmail(e.target.value) }} />
           </div>
-          <form name='profile-form' id='profile-form' className='profile-form' encType='multipart/form-data' method='put'>
-            <p className='font-weight-bold login-username'>{user.userName}</p>
-            <p className='font-small text-secondary'>Joined {moment(user.joinDate).format('MMMM DD, YYYY')}</p>
-            <div className='input-group input-group-override'>
-                <input type='text' className='form-control login-username' defaultValue={user.userName} placeholder='user name' onChange={(e) => this.setState({ username: e.target.value })} />
-                <span>&nbsp;</span>
-                <input type='text' className='form-control' defaultValue={user.email} placeholder='email' onChange={(e) => this.setState({ email: e.target.value })} />
-            </div>
-            <div className='input-group'>
-                <input type='text' className='form-control' defaultValue={user.firstName} placeholder='first name' onChange={(e) => this.setState({ firstname: e.target.value })} />
-                <span>&nbsp;</span>
-                <input type='text' className='form-control' defaultValue={user.lastName} placeholder='last name' onChange={(e) => this.setState({ lastname: e.target.value })} />
-            </div>
-            <div className='input-group'>
-                <input type='number' className='form-control' defaultValue={user.age} placeholder='00' onChange={(e) => this.setState({ age: e.target.value })} />
-                <span>&nbsp;</span>
-                <input type='date' className='form-control' defaultValue={moment(user.birthDate).format('YYYY-MM-DD')} onChange={(e) => this.setState({ birthdate: e.target.value })} />
-            </div>
-            <div className='input-group'>
-                <input type='text' className='form-control' defaultValue={user.city} placeholder='city' onChange={(e) => this.setState({ city: e.target.value })} />
-                <span>&nbsp;</span>
-                <input type='text' className='form-control' defaultValue={user.state} placeholder='state' onChange={(e) => this.setState({ state: e.target.value })} />
-            </div>
-            <div id='validation-error'>form validation failed</div>
-            <input id="upload-photo" type="file" accept="image/*" name="photo" ref='photoUploader' onChange={(e) => this.handleProfilePhotoChange(e)} />
-            <div className='button-container'>
-              <button type='submit' title='Logout' className='btn btn-primary btn-profile' onClick={(e) => this.handleLogout(e)}><i className='fas fa-door-closed'></i></button>
-              <button type='submit' title='Update Information' className='btn btn-success btn-profile' onClick={(e) => this.handleUserUpdate(e)}><i className='fas fa-user-edit'></i></button>
-            </div>
-          </form>
-        </header>
-      )
-    } else {
-      this.props.history.push('/strago/login')
-      return <Redirect to='/strago/login' />
-    }
-  }
+          <div className='input-group'>
+              <input type='text' className='form-control' defaultValue={user.firstName} placeholder='first name' onChange={e => { setFirstname(e.target.value) }} />
+              <span>&nbsp;</span>
+              <input type='text' className='form-control' defaultValue={user.lastName} placeholder='last name'  onChange={e => { setLastname(e.target.value) }} />
+          </div>
+          <div className='input-group'>
+              <input type='number' className='form-control' defaultValue={user.age} placeholder='00' onChange={e => { setAge(e.target.value) }} />
+              <span>&nbsp;</span>
+              <input type='date' className='form-control' defaultValue={moment(user.birthDate).format('YYYY-MM-DD')}  onChange={e => { setBirthdate(e.target.value) }} />
+          </div>
+          <div className='input-group'>
+              <input type='text' className='form-control' defaultValue={user.city} placeholder='city' onChange={e => { setCity(e.target.value) }} />
+              <span>&nbsp;</span>
+              <input type='text' className='form-control' defaultValue={user.state} placeholder='state' onChange={e => { setState(e.target.value) }} />
+          </div>
+          <div id='validation-error'>form validation failed</div>
+          <input id="upload-photo" type="file" accept="image/*" name="photo" onChange={e => { handleProfilePhotoChange(e) }} />
+          <div className='button-container'>
+            <button type='submit' title='Logout' className='btn btn-primary btn-profile' onClick={handleLogout}><i className='fas fa-door-closed'></i></button>
+            <button type='submit' title='Update Information' className='btn btn-success btn-profile' onClick={e => { handleUserUpdate(e) }}><i className='fas fa-user-edit'></i></button>
+          </div>
+        </form>
+      </div>
+    </div>
+  )
 }
 
 export default Profile
