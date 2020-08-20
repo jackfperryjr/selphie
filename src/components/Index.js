@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Route, Link, Redirect} from 'react-router-dom'
 import Navbar from '../components/Navbar'
+import defaultImage from '../images/no-image.png'
 
 const useFetch = url => {
   const [characters, setCharacters] = useState(null)
@@ -32,7 +33,7 @@ function Index(props) {
                           { 
                             (x.pictures[0]) 
                               ? <img className='img-character' src={x.pictures[0].url} alt={x.name} /> 
-                              : <img className='img-character' src='./images/no-image.png' alt={x.name} />
+                              : <img className='img-character' src={defaultImage} alt={x.name} />
                           } 
                           </Link>
                         </div>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Redirect} from 'react-router-dom'
 import Navbar from '../components/Navbar'
+import defaultImage from '../images/no-image.png'
 
 const useFetch = url => {
   const [character, setCharacter] = useState(null)
@@ -84,11 +85,11 @@ function Edit(props) {
   if (character) {
     let x = character
     let primary 
-
+    
     if (x.pictures[0]) {
-      x.pictures.map(i => {(i.primary === 1) ? primary = i.url : primary = '../images/no-image.png'})
+      x.pictures.map(i => {(i.primary === 1) ? primary = i.url : primary = defaultImage})
     } else {
-      primary = '../images/no-image.png'
+      primary = defaultImage
     }
 
     return (
@@ -101,16 +102,16 @@ function Edit(props) {
                         <img className='img-character-profile' src={primary} alt={x.name} />
                         <div className='row'>
                           <div className='col-sm-6 col-md-6'>
-                            <img className='img-character-profile-collection' src='../images/no-image.png' alt={x.name} />
+                            <img className='img-character-profile-collection' src={defaultImage} alt={x.name} />
                           </div>
                           <div className='col-sm-6 col-md-6'>
-                            <img className='img-character-profile-collection' src='../images/no-image.png' alt={x.name} />
+                            <img className='img-character-profile-collection' src={defaultImage} alt={x.name} />
                           </div>
                           <div className='col-sm-6 col-md-6'>
-                            <img className='img-character-profile-collection' src='../images/no-image.png' alt={x.name} />
+                            <img className='img-character-profile-collection' src={defaultImage} alt={x.name} />
                           </div>
                           <div className='col-sm-6 col-md-6'>
-                            <img className='img-character-profile-collection' src='../images/no-image.png' alt={x.name} />
+                            <img className='img-character-profile-collection' src={defaultImage} alt={x.name} />
                           </div>
                         </div>
                       </div>
@@ -180,69 +181,98 @@ function Edit(props) {
                         </div>
                       </div>
                       <div className='col-sm-4 col-md-4'>
-                        <div className='input-group input-group-override'>
-                            <input type='text' className='form-control' name='platform'
-                              // defaultValue={x.origin} 
-                              placeholder='platform'
-                              // onChange={(e) => this.handleChange(e)}
-                            />
-                          </div>
-                          <div className='input-group input-group-override'>
-                            <input type='text' className='form-control' name='hitpoints'
-                              // defaultValue={x.origin} 
-                              placeholder='hitpoints'
-                              // onChange={(e) => this.handleChange(e)}
-                            />
-                          </div>
-                          <div className='input-group input-group-override'>
-                            <input type='text' className='form-control' name='manapoints'
-                              // defaultValue={x.origin} 
-                              placeholder='manapoints'
-                              // onChange={(e) => this.handleChange(e)}
-                            />
-                          </div>
-                          <div className='input-group input-group-override'>
-                            <input type='text' className='form-control' name='attack'
-                              // defaultValue={x.origin} 
-                              placeholder='attack'
-                              // onChange={(e) => this.handleChange(e)}
-                            />
-                          </div>
-                          <div className='input-group input-group-override'>
-                            <input type='text' className='form-control' name='defense'
-                              // defaultValue={x.origin} 
-                              placeholder='defense'
-                              // onChange={(e) => this.handleChange(e)}
-                            />
-                          </div>
-                          <div className='input-group input-group-override'>
-                            <input type='text' className='form-control' name='magic'
-                              // defaultValue={x.origin} 
-                              placeholder='magic'
-                              // onChange={(e) => this.handleChange(e)}
-                            />
-                          </div>
-                          <div className='input-group input-group-override'>
-                            <input type='text' className='form-control' name='magicdefense'
-                              // defaultValue={x.origin} 
-                              placeholder='magicdefense'
-                              // onChange={(e) => this.handleChange(e)}
-                            />
-                          </div>
-                          <div className='input-group input-group-override'>
-                            <input type='text' className='form-control' name='agility'
-                              // defaultValue={x.origin} 
-                              placeholder='agility'
-                              // onChange={(e) => this.handleChange(e)}
-                            />
-                          </div>
-                          <div className='input-group input-group-override'>
-                            <input type='text' className='form-control' name='spirit'
-                              // defaultValue={x.origin} 
-                              placeholder='spirit'
-                              // onChange={(e) => this.handleChange(e)}
-                            />
-                          </div>
+                        <select className='form-control'>
+                        {x.stats.length > 0
+                          ?  x.stats.map
+                                (x =>
+                                  <option className='card-character' key={x.id}>{x.platform} - {x.class} - level: {x.level}</option>
+                                )
+                          : <option>No stats entered...</option>
+                        }
+                        </select>
+                        {x.stats.map
+                          (x => 
+                            <div>
+                            <div className='input-group input-group-override'>
+                              <input type='text' className='form-control' name='platform'
+                                defaultValue={x.platform} 
+                                placeholder='platform'
+                                // onChange={(e) => this.handleChange(e)}
+                              />
+                            </div>
+                            <div className='input-group input-group-override'>
+                              <input type='text' className='form-control' name='platform'
+                                defaultValue={x.class} 
+                                placeholder='class'
+                                // onChange={(e) => this.handleChange(e)}
+                              />
+                            </div>
+                            <div className='input-group input-group-override'>
+                              <input type='text' className='form-control' name='platform'
+                                defaultValue={x.level} 
+                                placeholder='level'
+                                // onChange={(e) => this.handleChange(e)}
+                              />
+                            </div>
+                            <div className='input-group input-group-override'>
+                              <input type='text' className='form-control' name='hitpoints'
+                                defaultValue={x.hitpoints} 
+                                placeholder='hitpoints'
+                                // onChange={(e) => this.handleChange(e)}
+                              />
+                            </div>
+                            <div className='input-group input-group-override'>
+                              <input type='text' className='form-control' name='manapoints'
+                                defaultValue={x.manapoints} 
+                                placeholder='manapoints'
+                                // onChange={(e) => this.handleChange(e)}
+                              />
+                            </div>
+                            <div className='input-group input-group-override'>
+                              <input type='text' className='form-control' name='attack'
+                                defaultValue={x.attack} 
+                                placeholder='attack'
+                                // onChange={(e) => this.handleChange(e)}
+                              />
+                            </div>
+                            <div className='input-group input-group-override'>
+                              <input type='text' className='form-control' name='defense'
+                                defaultValue={x.defense} 
+                                placeholder='defense'
+                                // onChange={(e) => this.handleChange(e)}
+                              />
+                            </div>
+                            <div className='input-group input-group-override'>
+                              <input type='text' className='form-control' name='magic'
+                                defaultValue={x.magic} 
+                                placeholder='magic'
+                                // onChange={(e) => this.handleChange(e)}
+                              />
+                            </div>
+                            <div className='input-group input-group-override'>
+                              <input type='text' className='form-control' name='magicdefense'
+                                defaultValue={x.magicdefense} 
+                                placeholder='magicdefense'
+                                // onChange={(e) => this.handleChange(e)}
+                              />
+                            </div>
+                            <div className='input-group input-group-override'>
+                              <input type='text' className='form-control' name='agility'
+                                defaultValue={x.agility} 
+                                placeholder='agility'
+                                // onChange={(e) => this.handleChange(e)}
+                              />
+                            </div>
+                            <div className='input-group input-group-override'>
+                              <input type='text' className='form-control' name='spirit'
+                                defaultValue={x.spirit} 
+                                placeholder='spirit'
+                                // onChange={(e) => this.handleChange(e)}
+                              />
+                            </div>
+                            </div>
+                          )
+                        }
                       </div>
                       <div className='col-sm-12 col-md-12'>
                         <div className='input-group input-group-override'>
