@@ -17,6 +17,7 @@ function Profile(props) {
 
   function handleLogout () {
     localStorage.clear()
+    props.history.push('/login')
     return <Redirect to='/login' />
   }
 
