@@ -114,8 +114,22 @@ function Profile(props) {
           <div id='validation-error'>form validation failed</div>
           <input id="upload-photo" type="file" accept="image/*" name="photo" onChange={e => { handleProfilePhotoChange(e) }} />
           <div className='button-container'>
-            <button type='submit' title='Logout' className='btn btn-primary btn-profile' onClick={handleLogout}><i className='fas fa-door-closed'></i></button>
-            <button type='submit' title='Update Information' className='btn btn-success btn-profile' onClick={e => { handleUserUpdate(e) }}><i className='fas fa-user-edit'></i></button>
+            <div className='row'>
+              <div className='col-md-12'>
+                <button type='submit' title='Logout' className='btn btn-primary btn-profile' onClick={handleLogout}><i className='fas fa-door-closed'></i></button>
+              </div>
+              <div className='col-md-12'>
+                <p className='font-small'>logout</p>
+              </div>
+            </div>
+            <div className='row'>
+              <div className='col-md-12'>
+                <button type='submit' title='Update Information' className='btn btn-success btn-profile' onClick={e => { handleUserUpdate(e) }}><i className='fas fa-user-edit'></i></button>
+              </div>
+              <div className='col-md-12'>
+                <p className='font-small'>update info</p>
+              </div>
+            </div>
           </div>
         </form>
       </div>
