@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/strago/static/css/main.0782360a.chunk.css",
-    "main.js": "/strago/static/js/main.54d217dd.chunk.js",
-    "main.js.map": "/strago/static/js/main.54d217dd.chunk.js.map",
+    "main.css": "/strago/static/css/main.1cef6417.chunk.css",
+    "main.js": "/strago/static/js/main.714b6b85.chunk.js",
+    "main.js.map": "/strago/static/js/main.714b6b85.chunk.js.map",
     "runtime-main.js": "/strago/static/js/runtime-main.df13fdca.js",
     "runtime-main.js.map": "/strago/static/js/runtime-main.df13fdca.js.map",
     "static/css/2.de424728.chunk.css": "/strago/static/css/2.de424728.chunk.css",
     "static/js/2.4cc21bec.chunk.js": "/strago/static/js/2.4cc21bec.chunk.js",
     "static/js/2.4cc21bec.chunk.js.map": "/strago/static/js/2.4cc21bec.chunk.js.map",
     "index.html": "/strago/index.html",
-    "precache-manifest.07d8d2fc3f411a29a45d923383dbba77.js": "/strago/precache-manifest.07d8d2fc3f411a29a45d923383dbba77.js",
+    "precache-manifest.31fab6528ffd53b64c4f06cab96da0f5.js": "/strago/precache-manifest.31fab6528ffd53b64c4f06cab96da0f5.js",
     "service-worker.js": "/strago/service-worker.js",
     "static/css/2.de424728.chunk.css.map": "/strago/static/css/2.de424728.chunk.css.map",
-    "static/css/main.0782360a.chunk.css.map": "/strago/static/css/main.0782360a.chunk.css.map",
+    "static/css/main.1cef6417.chunk.css.map": "/strago/static/css/main.1cef6417.chunk.css.map",
     "static/js/2.4cc21bec.chunk.js.LICENSE.txt": "/strago/static/js/2.4cc21bec.chunk.js.LICENSE.txt",
     "static/media/moogle.png": "/strago/static/media/moogle.d8c8ce4f.png",
     "static/media/no-image-03.png": "/strago/static/media/no-image-03.15978ed8.png",
@@ -23,7 +23,7 @@
     "static/js/runtime-main.df13fdca.js",
     "static/css/2.de424728.chunk.css",
     "static/js/2.4cc21bec.chunk.js",
-    "static/css/main.0782360a.chunk.css",
-    "static/js/main.54d217dd.chunk.js"
+    "static/css/main.1cef6417.chunk.css",
+    "static/js/main.714b6b85.chunk.js"
   ]
 }

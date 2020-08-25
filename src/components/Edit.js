@@ -70,7 +70,8 @@ function Edit(props) {
         body: payload
       }).then(function(response) {
         if (response.status === 200) {
-          window.location.reload()
+          props.history.push('/edit' + id)
+          return <Redirect to={'/edit' + id} />
         } else if (response.status === 401) {
           localStorage.clear()
           props.history.push('/login')
@@ -115,7 +116,8 @@ function Edit(props) {
         body: payload
       }).then(function(response) {
         if (response.status === 200) {
-          window.location.reload()
+          props.history.push('/edit' + id)
+          return <Redirect to={'/edit' + id} />
         } else if (response.status === 401) {
           localStorage.clear()
           props.history.push('/login')
@@ -145,7 +147,8 @@ function Edit(props) {
         }
       }).then(function(response) {
         if (response.status === 200) {
-          window.location.reload()
+          props.history.push('/edit' + id)
+          return <Redirect to={'/edit' + id} />
         } else if (response.status === 401) {
           localStorage.clear()
           props.history.push('/login')
@@ -188,7 +191,8 @@ function Edit(props) {
         body: payload
       }).then(function(response) {
         if (response.status === 200) {
-          window.location.reload()
+          props.history.push('/edit' + id)
+          return <Redirect to={'/edit' + id} />
         } else if (response.status === 401) {
           localStorage.clear()
           props.history.push('/login')
