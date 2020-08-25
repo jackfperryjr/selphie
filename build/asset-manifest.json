@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/strago/static/css/main.0782360a.chunk.css",
+    "main.js": "/strago/static/js/main.714b6b85.chunk.js",
+    "main.js.map": "/strago/static/js/main.714b6b85.chunk.js.map",
+    "runtime-main.js": "/strago/static/js/runtime-main.df13fdca.js",
+    "runtime-main.js.map": "/strago/static/js/runtime-main.df13fdca.js.map",
+    "static/css/2.de424728.chunk.css": "/strago/static/css/2.de424728.chunk.css",
+    "static/js/2.4cc21bec.chunk.js": "/strago/static/js/2.4cc21bec.chunk.js",
+    "static/js/2.4cc21bec.chunk.js.map": "/strago/static/js/2.4cc21bec.chunk.js.map",
+    "index.html": "/strago/index.html",
+    "precache-manifest.86c0b03dc459bcb4ea3b04622cc51387.js": "/strago/precache-manifest.86c0b03dc459bcb4ea3b04622cc51387.js",
+    "service-worker.js": "/strago/service-worker.js",
+    "static/css/2.de424728.chunk.css.map": "/strago/static/css/2.de424728.chunk.css.map",
+    "static/css/main.0782360a.chunk.css.map": "/strago/static/css/main.0782360a.chunk.css.map",
+    "static/js/2.4cc21bec.chunk.js.LICENSE.txt": "/strago/static/js/2.4cc21bec.chunk.js.LICENSE.txt",
+    "static/media/moogle.png": "/strago/static/media/moogle.d8c8ce4f.png",
+    "static/media/no-image-03.png": "/strago/static/media/no-image-03.15978ed8.png",
+    "static/media/no-image-04.png": "/strago/static/media/no-image-04.8038d64a.png",
+    "static/media/no-image.png": "/strago/static/media/no-image.f98b32ce.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.df13fdca.js",
+    "static/css/2.de424728.chunk.css",
+    "static/js/2.4cc21bec.chunk.js",
+    "static/css/main.0782360a.chunk.css",
+    "static/js/main.714b6b85.chunk.js"
+  ]
+}

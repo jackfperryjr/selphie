@@ -179,7 +179,7 @@ function Edit(props) {
       payload.append('height', document.querySelector('[name="height"]').value)
       payload.append('weight', document.querySelector('[name="weight"]').value)
       payload.append('origin', document.querySelector('[name="origin"]').value)
-      payload.append('description', document.querySelector('[name="description"]').value)
+      payload.append('description', document.querySelector('[name="description"]').innerHTML)
       fetch('https://www.moogleapi.com/api/v1/characters/update/' + id, {
         method: 'put',
         headers: {
