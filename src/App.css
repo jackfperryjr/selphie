@@ -9,7 +9,7 @@ body {
 }
 .logo-title {
   position: fixed;
-  top: 31px;
+  top: 28px;
 }
 .tilt {
   transform: rotate(-17deg);
