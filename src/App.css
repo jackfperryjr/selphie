@@ -4,6 +4,9 @@ body {
 .app {
   text-align: center;
 }
+.logo {
+  width: 37%;
+}
 .logo-title {
   position: fixed;
   top: 31px;
