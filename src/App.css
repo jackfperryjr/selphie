@@ -2,12 +2,20 @@
   text-align: center;
 }
 
-.top-margin {
-  margin-top: 100px;
+.tilt {
+  transform: rotate(-17deg);
 }
 
-.no-margin {
-  margin: 0;
+.top-margin {
+  margin-top: 80px;
+}
+
+.mb-25 {
+  margin-bottom: .75rem!important;
+}
+
+.stat-select {
+  font-size: 14px;
 }
 
 .navbar {
@@ -53,7 +61,7 @@
 }
 
 .img-character-profile-collection {
-  margin: 20px;
+  margin: 20px 0;
   height: calc(50px + 5vmin);
   width: calc(50px + 5vmin);
   object-fit: contain;
@@ -80,7 +88,7 @@
 }
 
 .btn-profile {
-  width: 100px;
+  min-width: 100px;
 }
 
 .profile-photo {
@@ -141,21 +149,21 @@ input[type="email"]:focus,
 input[type="date"]:focus,
 input[type="number"]:focus  {
   outline: 0 none;
-  border: 1px solid transparent;
-  border-bottom: 2px solid #007bff;
+  /* border: 1px solid transparent;
+  border-bottom: 1px solid #007bff; */
+  border: 1px solid #007bff;
   color: #000;
+  background-color: transparent;
 }
 
 .character-form-control {
   margin-top: 10px;
-  height: auto;
+  padding: 7px;
+  height: 150px;
   resize: none;
-  min-height: 250px;
-  height: auto;
   width: 100%;
   outline: 0 none;
-  border: 2px solid #007bff;
-  border-top: 1px solid transparent;
+  border: 1px solid #007bff;
   border-radius: 5px;
   color: #000;
 }
@@ -170,6 +178,64 @@ input[type="number"]:focus  {
   justify-content: flex-start;
   font-size: calc(10px + 2vmin);
   color: #000;
+}
+
+.floating-label { 
+  position:relative; 
+  margin-bottom:.75rem; 
+}
+
+.floating-input {
+  font-size:14px;
+  display:block;
+}
+
+label {
+  color: transparent;
+  padding: 0 5px;
+  font-size:14px;
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  right:5px;
+  bottom: 0;
+  transition:0.2s ease-in-out all; 
+  -moz-transition:0.2s ease-in-out all; 
+  -webkit-transition:0.2s ease-in-out all;
+}
+
+.floating-input:focus ~ label, 
+.floating-input:not(:placeholder-shown) ~ label {
+  top:-7px;
+  font-size:12px;
+  font-weight: bold;
+  color:#007bff;
+  background-color: #fff!important;
+  height:20px;
+  z-index: 1000;
+  transition:0.2s ease-in-out all; 
+  -moz-transition:0.2s ease-in-out all; 
+  -webkit-transition:0.2s ease-in-out all;
+}
+
+.floating-textarea:focus ~ label, 
+.floating-textarea:not(:placeholder-shown) ~ label {
+  top:3px;
+  font-size:12px;
+  font-weight: bold;
+  color:#007bff;
+  background-color: #fff!important;
+  height: 20px;
+  z-index: 1000;
+  transition:0.2s ease-in-out all; 
+  -moz-transition:0.2s ease-in-out all; 
+  -webkit-transition:0.2s ease-in-out all;
+}
+
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .login-screen,
@@ -219,7 +285,7 @@ input[type="number"]:focus  {
   height: 100vh;
   backdrop-filter: blur(5px);
   background-color: rgba(255, 255, 255, .3);
-  z-index: 1000;
+  z-index: 5000;
 }
 
 .loader {

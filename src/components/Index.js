@@ -28,13 +28,14 @@ function Index(props) {
             {characters.map
               (x =>
                 <div className='card-character' key={x.id}>
-                  <div className='col-lg-2 col-md-2 col-sm-2 col-xs-2 text-center'>
+                  <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center'>
                     <Link to={'/edit/' + x.id}>
                     { 
                       (x.pictures[0]) 
                         ? <img className='img-character' src={x.pictures[0].url} alt={x.name} /> 
                         : <img className='img-character' src={defaultImage} alt={x.name} />
                     } 
+                    <h6 className='text-center'>{x.name}</h6>
                     </Link>
                   </div>
                 </div>

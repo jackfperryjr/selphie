@@ -45,6 +45,7 @@ function Login(props) {
           } else {
             console.log(response.message)
             document.getElementById('login-error').style.display = 'block'
+            setOverlay(false)
           }
         })
       } else {
@@ -60,7 +61,7 @@ function Login(props) {
   return (
     <div className='form-container login-screen'>
       <div className='overlay' style={{display: (overlay) ? 'block' : 'none'}}>
-        <span className='loader text-primary'><i className='fas fa-circle-notch fa-spin fa-5x'></i></span>
+        <span className='loader text-primary'><i className='fas fa-circle-notch fa-spin fa-3x'></i></span>
       </div>
       <p>Enter credentials</p>
       <form>

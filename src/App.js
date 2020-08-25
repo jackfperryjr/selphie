@@ -8,6 +8,7 @@ import index from './components/Index'
 import edit from './components/Edit'
 import add from './components/Add'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import '../node_modules/react-bootstrap/dist/react-bootstrap.min.js'
 import './App.css'
 
 function App(props) {
