@@ -24,7 +24,7 @@ function Index(props) {
       <div>
         <Navbar />
         <div className='form-container'>
-          <div className='row no-margin justify-content-center'>
+          <div className='row mx-3 justify-content-center'>
             {characters.map
               (x =>
                 <div className='card-character' key={x.id}>

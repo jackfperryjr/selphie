@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/strago/static/css/main.1cef6417.chunk.css",
-    "main.js": "/strago/static/js/main.3a71aeba.chunk.js",
-    "main.js.map": "/strago/static/js/main.3a71aeba.chunk.js.map",
+    "main.js": "/strago/static/js/main.d250b483.chunk.js",
+    "main.js.map": "/strago/static/js/main.d250b483.chunk.js.map",
     "runtime-main.js": "/strago/static/js/runtime-main.df13fdca.js",
     "runtime-main.js.map": "/strago/static/js/runtime-main.df13fdca.js.map",
     "static/css/2.de424728.chunk.css": "/strago/static/css/2.de424728.chunk.css",
     "static/js/2.fa3281a5.chunk.js": "/strago/static/js/2.fa3281a5.chunk.js",
     "static/js/2.fa3281a5.chunk.js.map": "/strago/static/js/2.fa3281a5.chunk.js.map",
     "index.html": "/strago/index.html",
-    "precache-manifest.59cb38b83b49c4886b4aeee8e8a6d8a7.js": "/strago/precache-manifest.59cb38b83b49c4886b4aeee8e8a6d8a7.js",
+    "precache-manifest.045e62f1584212e29863202ac558307b.js": "/strago/precache-manifest.045e62f1584212e29863202ac558307b.js",
     "service-worker.js": "/strago/service-worker.js",
     "static/css/2.de424728.chunk.css.map": "/strago/static/css/2.de424728.chunk.css.map",
     "static/css/main.1cef6417.chunk.css.map": "/strago/static/css/main.1cef6417.chunk.css.map",
@@ -24,6 +24,6 @@
     "static/css/2.de424728.chunk.css",
     "static/js/2.fa3281a5.chunk.js",
     "static/css/main.1cef6417.chunk.css",
-    "static/js/main.3a71aeba.chunk.js"
+    "static/js/main.d250b483.chunk.js"
   ]
 }

@@ -303,16 +303,16 @@ function Edit(props) {
                   <div className='col-sm-6 col-md-6'>
                     <img className='img-character-profile' src={primaryImage} alt={x.name} />
                     <div className='row justify-content-center'>
-                      <div className='col-xs-2 col-sm-6 col-md-3 col-lg-3 m-0 p-0'>
+                      <div className='col-xs-6 col-sm-6 col-md-6 col-lg-3 m-0 p-0'>
                         <img className='img-character-profile-collection' src={image1} alt={x.name} />
                       </div>
-                      <div className='col-xs-2 col-sm-6 col-md-3 col-lg-3 m-0 p-0'>
+                      <div className='col-xs-6 col-sm-6 col-md-6 col-lg-3 m-0 p-0'>
                         <img className='img-character-profile-collection' src={image2} alt={x.name} />
                       </div>
-                      <div className='col-xs-2 col-sm-6 col-md-3 col-lg-3 m-0 p-0'>
+                      <div className='col-xs-6 col-sm-6 col-md-6 col-lg-3 m-0 p-0'>
                         <img className='img-character-profile-collection' src={image3} alt={x.name} />
                       </div>
-                      <div className='col-xs-2 col-sm-6 col-md-3 col-lg-3 m-0 p-0'>
+                      <div className='col-xs-6 col-sm-6 col-md-6 col-lg-3 m-0 p-0'>
                         <img className='img-character-profile-collection' src={image4} alt={x.name} />
                       </div>
                     </div>
