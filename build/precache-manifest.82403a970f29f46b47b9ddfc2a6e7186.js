@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "94d826686337cf1a58d9962c555fbe88",
+    "revision": "d446c873b1b9c9825cbb9983f97407b5",
     "url": "/strago/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/strago/static/css/2.de424728.chunk.css"
   },
   {
-    "revision": "646fc67bda0d3eabf884",
-    "url": "/strago/static/css/main.29b2047f.chunk.css"
+    "revision": "34a899f6c4fc3ab6b694",
+    "url": "/strago/static/css/main.c8ce17c3.chunk.css"
   },
   {
     "revision": "5db1d4e05997a8d90f88",
@@ -20,7 +20,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/strago/static/js/2.fa3281a5.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "646fc67bda0d3eabf884",
+    "revision": "34a899f6c4fc3ab6b694",
     "url": "/strago/static/js/main.9196dfb3.chunk.js"
   },
   {

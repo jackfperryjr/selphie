@@ -103,6 +103,7 @@ body {
 #upload-photo,
 #upload-wallpaper {
   opacity: 0;
+  width: 80%;
 }
 .main-photo {
   height: calc(100px + 10vmin);
