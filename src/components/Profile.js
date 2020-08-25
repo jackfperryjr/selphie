@@ -91,7 +91,7 @@ function Profile(props) {
         <form name='profile-form' id='profile-form' className='profile-form' encType='multipart/form-data' method='put'>
           <p className='font-weight-bold login-username'>{user.userName}</p>
           <p className='font-small text-secondary'>Joined {moment(user.joinDate).format('MMMM DD, YYYY')}</p>
-          <div className='input-group input-group-override'>
+          <div className='input-group'>
               <input type='text' className='form-control login-username' defaultValue={user.userName} placeholder='user name'  onChange={e => { setUsername(e.target.value) }} />
               <span>&nbsp;</span>
               <input type='text' className='form-control' defaultValue={user.email} placeholder='email' onChange={e => { setEmail(e.target.value) }} />
