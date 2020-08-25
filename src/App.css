@@ -116,7 +116,7 @@ form {
 .profile-form {
   margin: 0 auto;
   width: calc(100% + 10vmin);
-  max-width: 350px;
+  max-width: 300px;
 }
 .login-username {
   text-transform: lowercase;
