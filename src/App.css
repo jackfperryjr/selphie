@@ -270,16 +270,12 @@ label {
   transform: translate(-50%, -50%);
 }
 @media (min-width: 768px) {
-  .navbar {
+  .logo-title {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 75px;
+    top: 32px;
+  }
+  .navbar {
     background:transparent;
-    border:transparent;
-    backdrop-filter: blur(5px);
-    z-index: 2000;
   }
   .profile-container {
     height: calc(200px + 6vmin);
