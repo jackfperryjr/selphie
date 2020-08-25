@@ -291,7 +291,7 @@ label {
 .loader {
   position: fixed;
   top: 40vh;
-  left: 46vw;
+  left: 50vw;
 }
 
 @media (min-width: 768px) {
