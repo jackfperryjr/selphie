@@ -1,15 +1,26 @@
 body {
-  padding-bottom: 50px;
+  background-color: #25282c;
+  color: #fff;
+  height: 100%;
+  overflow: auto;
 }
 .app {
   text-align: center;
+}
+.component {
+  position: fixed;
+  top: 20px;
+  left: 0;
+  height: 100%;
+  padding-bottom: 50px;
+  overflow-y: scroll!important;
 }
 .logo {
   width: 37%;
 }
 .logo-title {
   position: fixed;
-  top: 18px;
+  top: 10px;
 }
 .tilt {
   transform: rotate(-17deg);
@@ -31,25 +42,24 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 55px;
-  background: #fff;
+  height: 5vh;
+  background: #25282c;
   border:transparent;
   backdrop-filter: blur(5px);
-  z-index: 2000;
+  z-index: 4000;
 }
 .img-navbar {
   position: fixed;
-  top: 0;
-  right: 0;
+  top: calc(0px + 0.25vmin);
+  right: calc(10px + 1vmin);
   border-radius: 50%;
   height: calc(20px + 5vmin);
   width: calc(20px + 5vmin);
   object-fit: cover;
-  margin: calc(10px + 1vmin);
 }
 .character-add {
   position: fixed;
-  top: calc(16px + 1vmin);
+  top: calc(5px + 1vmin);
   right: calc(60px + 2vmin);
   font-size: calc(8px + 1vmin);
 }
@@ -142,8 +152,12 @@ input[type="date"]:focus,
 input[type="number"]:focus  {
   outline: 0 none;
   border: 1px solid #007bff;
-  color: #000;
-  background-color: transparent;
+  color: #fff;
+  background-color: #25282c;
+}
+textarea, select {
+  background-color: #25282c!important;
+  color: #fff!important;
 }
 .character-form-control {
   margin-top: 10px;
@@ -154,10 +168,10 @@ input[type="number"]:focus  {
   outline: 0 none;
   border: 1px solid #007bff;
   border-radius: 5px;
-  color: #000;
+  color: #fff;
 }
 .form-container {
-  margin: 100px 0 0 0;
+  margin: 80px 0 0 0;
   padding-top: 0;
   min-height: 100%;
   display: flex;
@@ -165,7 +179,7 @@ input[type="number"]:focus  {
   align-items: center;
   justify-content: flex-start;
   font-size: calc(10px + 2vmin);
-  color: #000;
+  color: #fff;
 }
 .floating-label { 
   position:relative; 
@@ -194,7 +208,7 @@ label {
   font-size:12px;
   font-weight: bold;
   color:#007bff;
-  background-color: #fff!important;
+  background-color: #25282c!important;
   height:20px;
   z-index: 1000;
   transition:0.2s ease-in-out all; 
@@ -208,7 +222,7 @@ label {
   font-size:12px;
   font-weight: bold;
   color:#007bff;
-  background-color: #fff!important;
+  background-color: #25282c!important;
   height: 20px;
   z-index: 1000;
   transition:0.2s ease-in-out all; 
@@ -272,7 +286,7 @@ label {
 @media (min-width: 768px) {
   .logo-title {
     position: fixed;
-    top: 22px;
+    top: 15px;
   }
   .navbar {
     background:transparent;
@@ -290,17 +304,16 @@ label {
   }
   .img-navbar {
     position: fixed;
-    top: 0;
-    right: 0;
+    top: calc(5px + 0.25vmin);
+    right: calc(10px + 1vmin);
     border-radius: 50%;
     height: calc(10px + 4vmin);
     width: calc(10px + 4vmin);
     object-fit: cover;
-    margin: calc(10px + 1vmin);
   }
   .character-add {
     position: fixed;
-    top: calc(10px + 1vmin);
+    top: calc(3px + 1vmin);
     right: calc(60px + 2vmin);
     font-size: calc(8px + 1vmin);
   }

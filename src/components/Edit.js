@@ -275,8 +275,9 @@ function Edit(props) {
     }
 
     return (
-      <div>
-        <Navbar />
+      <>
+      <Navbar />
+      <div className='component'>
         <div className='container top-margin'>
           <Modal show={show} onHide={handleClose}
               {...props}
@@ -577,13 +578,16 @@ function Edit(props) {
           </form>
         </div>
       </div>
+      </>
     )
   } else {
     return (
+      <>
+      <Navbar />
       <div>
-        <Navbar />
         <span className='loader text-primary'><i className='fas fa-circle-notch fa-spin fa-2x'></i> Loading...</span>
       </div>
+      </>
     )
   }
 }

@@ -21,8 +21,9 @@ function Index(props) {
 
   if (characters) {
     return ( 
-      <div>
-        <Navbar />
+      <>
+      <Navbar />
+      <div className='component'>
         <div className='form-container'>
           <div className='row mx-3 justify-content-center'>
             {characters.map
@@ -44,13 +45,16 @@ function Index(props) {
           </div>
         </div>
       </div>
+      </>
     )
   } else {
     return (
-      <div>
-        <Navbar />
+      <>
+      <Navbar />
+      <div className='component'>
         <span className='loader text-primary'><i className='fas fa-circle-notch fa-spin fa-2x'></i> Loading...</span>
       </div>
+      </>
     )
   }
 }
