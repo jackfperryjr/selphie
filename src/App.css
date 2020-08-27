@@ -72,6 +72,8 @@ body {
   height: calc(150px + 5vmin);
   width: calc(150px + 5vmin);
   object-fit: contain;
+  background-color: #fff;
+  padding: 5px;
 }
 .img-character-profile-collection {
   margin: 20px 0;
@@ -80,7 +82,11 @@ body {
   object-fit: contain;
 }
 .card-character {
-  margin: 0 0 10px 0; 
+  margin: 2px 5px;
+  border-radius: 5px;
+}
+.card-character > .text-center {
+  background-color: #fff;
 }
 .profile-container {
   text-align: center;

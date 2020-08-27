@@ -74,7 +74,7 @@ function Add(props) {
   return (
     <>
     <Navbar />
-    <div className='component'>
+    <div>
         <div className='container top-margin'>
           <Modal show={show} onHide={handleClose}
               {...props}
