@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "bc4f28fb5f1ed8152e762244191ab63a",
+    "revision": "b9c822d1826091ca7eb2bf40194b10dd",
     "url": "/strago/index.html"
   },
   {
