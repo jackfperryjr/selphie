@@ -24,11 +24,11 @@ function App(props) {
     <AuthContext.Provider value={{ authToken, setAuthToken: setToken }}>
       <Router basename='/strago'>
         <PrivateRoute exact path='/' component={index} />
-        <Route path='/login' component={login} />
-        <PrivateRoute path='/profile' component={profile} />
-        <PrivateRoute path='/index' component={index} />
-        <PrivateRoute path='/add' component={add} />
-        <PrivateRoute path='/edit/:id' component={edit} />
+        <Route exact path='/login' component={login} />
+        <PrivateRoute exact path='/profile' component={profile} />
+        <PrivateRoute exact path='/index' component={index} />
+        <PrivateRoute exact path='/add' component={add} />
+        <PrivateRoute exact path='/edit/:id' component={edit} />
       </Router>
     </AuthContext.Provider>
   )
