@@ -54,8 +54,8 @@ function Login(props) {
   }
 
   if (isLoggedIn) {
-    props.history.push('/index')
-    return <Redirect to='/index' />
+    props.history.push('/')
+    return <Redirect to='/' />
   }
 
   return (

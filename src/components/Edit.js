@@ -222,8 +222,8 @@ function Edit(props) {
         }
       }).then(function(response) {
         if (response.status === 200) {
-          props.history.push('/index')
-          return <Redirect to='/index' />
+          props.history.push('/')
+          return <Redirect to='/' />
         } else if (response.status === 401) {
           localStorage.clear()
           props.history.push('/login')

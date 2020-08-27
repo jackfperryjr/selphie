@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b9c822d1826091ca7eb2bf40194b10dd",
+    "revision": "ca118b599506c583e0357f94a7d05573",
     "url": "/strago/index.html"
   },
   {
-    "revision": "72a63bc991d16e4dfb78",
+    "revision": "bc7e0f6e504bb0f0064d",
     "url": "/strago/static/css/2.de424728.chunk.css"
   },
   {
-    "revision": "69087a2bb1aab9f6b3ba",
-    "url": "/strago/static/css/main.9da71293.chunk.css"
+    "revision": "a92b17b1cb46d174e6a8",
+    "url": "/strago/static/css/main.c8664d11.chunk.css"
   },
   {
-    "revision": "72a63bc991d16e4dfb78",
-    "url": "/strago/static/js/2.35702eb2.chunk.js"
+    "revision": "bc7e0f6e504bb0f0064d",
+    "url": "/strago/static/js/2.5dbe5842.chunk.js"
   },
   {
     "revision": "e908922da528485359b3012549bf3244",
-    "url": "/strago/static/js/2.35702eb2.chunk.js.LICENSE.txt"
+    "url": "/strago/static/js/2.5dbe5842.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "69087a2bb1aab9f6b3ba",
-    "url": "/strago/static/js/main.ebb128d5.chunk.js"
+    "revision": "a92b17b1cb46d174e6a8",
+    "url": "/strago/static/js/main.d0badebf.chunk.js"
   },
   {
     "revision": "ebc9c7008863a22f77eb",

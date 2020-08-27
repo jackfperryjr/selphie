@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/strago/precache-manifest.b9c5e6f291b9a260afcc383db67a157a.js"
+  "/strago/precache-manifest.2a5e4098f2f4eabf8c6a392fc75c3178.js"
 );
 
 self.addEventListener('message', (event) => {
