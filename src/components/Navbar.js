@@ -14,7 +14,7 @@ function Navbar(props) {
         (user !== null) 
           ? 
               <span>
-                <Link to='/'><img className='logo' src={moogleAPI} /><strong className='logo-title'>- Characters</strong></Link>
+                <Link to='/'><img className='logo' src={moogleAPI} /></Link>
                 <Link to='/add'><span className='character-add'><i className='fas fa-plus-circle fa-2x'></i></span></Link>
                 <Link to='/profile'><img className='img-navbar' src={user.photo} alt={user.userName}/></Link>
               </span>

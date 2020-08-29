@@ -3,6 +3,7 @@ import { BrowserRouter as Redirect} from 'react-router-dom'
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
 import moogleImage from '../images/moogle.png'
 
 function Add(props) {
@@ -74,7 +75,7 @@ function Add(props) {
   return (
     <>
     <Navbar />
-    <div>
+    <div className='component'>
         <div className='container top-margin'>
           <Modal show={show} onHide={handleClose}
               {...props}
@@ -99,7 +100,7 @@ function Add(props) {
               <div className='col-sm-12 col-md-12'>
                 <div className='row'>
                 <div className='col-sm-6 col-md-6'>
-                  <img className='img-character-profile tilt' src={moogleImage} />
+                  <img className='img-character-profile tilt moogle' src={moogleImage} />
                   <p className='mt-5 font-weight-bold'>You'll be able to upload pictures and add/edit stats after the initial creation.</p>
                 </div>
                   <div className='col-sm-6 col-md-6'>
@@ -165,7 +166,7 @@ function Add(props) {
                         </textarea>
                         <label>description</label>
                       </div>
-                      <div className='button-container float-right'>
+                      <div className='button-container'>
                         <button type='submit' title='Add Character' className='btn btn-primary btn-profile' onClick={e => { handleCharacterAdd(e) }}>Add Character</button>
                       </div>
                   </div>
@@ -175,6 +176,7 @@ function Add(props) {
           </form>
         </div>
       </div>
+      <Footer />
       </>
   )
 }

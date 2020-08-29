@@ -3,6 +3,7 @@ import { BrowserRouter as Redirect} from 'react-router-dom'
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
 import defaultImage from '../images/no-image.png'
 import image1 from '../images/no-image-01.png'
 import image2 from '../images/no-image-02.png'
@@ -277,7 +278,7 @@ function Edit(props) {
     return (
       <>
       <Navbar />
-      <div>
+      <div className='component'>
         <div className='container top-margin'>
           <Modal show={show} onHide={handleClose}
               {...props}
@@ -392,7 +393,7 @@ function Edit(props) {
                         </textarea>
                         <label>description</label>
                       </div>
-                      <div className='button-container float-right'>
+                      <div className='button-container'>
                         <button type='submit' title='Delete' className='btn btn-secondary btn-profile mr-2' onClick={e => { handleCharacterDelete(e) }}>Delete Character</button>
                         <button type='submit' title='Save' className='btn btn-primary btn-profile ml-2' onClick={e => { handleCharacterUpdate(e) }}>Update Character</button>
                       </div>
@@ -482,7 +483,7 @@ function Edit(props) {
                     />
                     <label>spirit</label>
                   </div>
-                  <div className='button-container float-right'>
+                  <div className='button-container'>
                     <button type='submit' title='Save Stats' className='btn btn-primary btn-profile' onClick={e => { handleStatAdd(e) }}>Add Stats</button>
                   </div>
                 </div>
@@ -578,6 +579,7 @@ function Edit(props) {
           </form>
         </div>
       </div>
+      <Footer />
       </>
     )
   } else {
@@ -587,6 +589,7 @@ function Edit(props) {
       <div>
         <span className='loader text-primary'><i className='fas fa-circle-notch fa-spin fa-2x'></i> Loading...</span>
       </div>
+      <Footer />
       </>
     )
   }

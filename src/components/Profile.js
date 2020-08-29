@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { BrowserRouter as Redirect} from 'react-router-dom'
 import moment from 'moment'
 import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
 
 function Profile(props) {
   const [username, setUsername] = useState('')
@@ -84,7 +85,7 @@ function Profile(props) {
   return (
     <div>
       <Navbar />
-      <div className='form-container'>
+      <div className='form-container component'>
         <div className='profile-container'>
           <img id='profile-photo' className='profile-photo' src={user.photo} alt={user.userName} onClick={handlePhotoUpload}/>
         </div>
@@ -133,6 +134,7 @@ function Profile(props) {
           </div>
         </form>
       </div>
+      <Footer />
     </div>
   )
 }

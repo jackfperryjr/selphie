@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Route, Link, Redirect} from 'react-router-dom'
 import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
 import defaultImage from '../images/no-image.png'
 
 const useFetch = url => {
@@ -45,6 +46,7 @@ function Index(props) {
           </div>
         </div>
       </div>
+      <Footer />
       </>
     )
   } else {
@@ -54,6 +56,7 @@ function Index(props) {
       <div className='component'>
         <span className='loader text-primary'><i className='fas fa-circle-notch fa-spin fa-2x'></i> Loading...</span>
       </div>
+      <Footer />
       </>
     )
   }
