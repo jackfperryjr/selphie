@@ -21,6 +21,10 @@ body {
   height: 50px;
   width: 50px;
 }
+.selphie-sm {
+  height: 30px;
+  width: 30px;
+}
 .selphie-lg {
   height: 90px;
   width: 90px;

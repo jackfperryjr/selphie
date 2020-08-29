@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Link} from 'react-router-dom'
-import moogleAPI from '../images/moogleapi.png'
+import selphie from '../icons/selphie.png'
 
 function Navbar(props) {
     let user = null
@@ -14,7 +14,7 @@ function Navbar(props) {
         (user !== null) 
           ? 
               <span>
-                <Link to='/'><img className='logo' src={moogleAPI} /></Link>
+                <Link to='/'><img className='selphie-sm' src={selphie} /> <span className='text-secondary'>for MoogleApi</span></Link>
                 <Link to='/add'><span className='character-add'><i className='fas fa-plus-circle fa-2x'></i></span></Link>
                 <Link to='/profile'><img className='img-navbar' src={user.photo} alt={user.userName}/></Link>
               </span>
