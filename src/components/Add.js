@@ -4,7 +4,7 @@ import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
-import moogleImage from '../images/moogle.png'
+import moogleImage from '../icons/moogle.png'
 
 function Add(props) {
   const [isVisible, setVisible] = useState(false)

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { BrowserRouter as Redirect} from 'react-router-dom'
 import { useAuth } from '../context/auth'
+import selphie from '../icons/selphie.png'
 
 function Login(props) {
   const [isLoggedIn, setLoggedIn] = useState(false)
@@ -61,7 +62,7 @@ function Login(props) {
   return (
     <div className='form-container login-screen'>
       <div className='overlay' style={{display: (overlay) ? 'block' : 'none'}}>
-        <span className='loader text-primary'><i className='fas fa-circle-notch fa-spin fa-3x'></i></span>
+        <span className='loader text-primary'><img className='selphie selphie-lg fa-spin' src={selphie} /></span>
       </div>
       <p>Enter credentials</p>
       <form>

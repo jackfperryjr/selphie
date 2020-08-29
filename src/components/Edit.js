@@ -5,10 +5,7 @@ import Button from 'react-bootstrap/Button'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import defaultImage from '../images/no-image.png'
-import image1 from '../images/no-image-01.png'
-import image2 from '../images/no-image-02.png'
-import image3 from '../images/no-image-03.png'
-import image4 from '../images/no-image-04.png'
+import selphie from '../icons/selphie.png'
 
 const useFetch = url => {
   const [character, setCharacter] = useState(null)
@@ -575,7 +572,7 @@ function Edit(props) {
       <>
       <Navbar />
       <div>
-        <span className='loader text-primary'><i className='fas fa-circle-notch fa-spin fa-2x'></i> Loading...</span>
+        <span className='loader text-primary'><img className='selphie fa-spin' src={selphie} /></span>
       </div>
       <Footer />
       </>

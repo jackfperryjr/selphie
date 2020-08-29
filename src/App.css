@@ -17,6 +17,14 @@ body {
   overflow-y: scroll!important;
   background-color: #fff;
 }
+.selphie {
+  height: 50px;
+  width: 50px;
+}
+.selphie-lg {
+  height: 90px;
+  width: 90px;
+}
 .logo {
   width: 37%;
 }

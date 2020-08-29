@@ -3,6 +3,7 @@ import { BrowserRouter as Route, Link, Redirect} from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import defaultImage from '../images/no-image.png'
+import selphie from '../icons/selphie.png'
 
 const useFetch = url => {
   const [characters, setCharacters] = useState(null)
@@ -54,7 +55,7 @@ function Index(props) {
       <>
       <Navbar />
       <div className='component'>
-        <span className='loader text-primary'><i className='fas fa-circle-notch fa-spin fa-2x'></i> Loading...</span>
+        <span className='loader text-primary'><img className='selphie fa-spin' src={selphie} /></span>
       </div>
       <Footer />
       </>
