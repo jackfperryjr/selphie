@@ -1,30 +1,30 @@
 {
   "files": {
-    "main.css": "/strago/static/css/main.8ce39908.chunk.css",
-    "main.js": "/strago/static/js/main.505ef83c.chunk.js",
-    "main.js.map": "/strago/static/js/main.505ef83c.chunk.js.map",
-    "runtime-main.js": "/strago/static/js/runtime-main.df13fdca.js",
-    "runtime-main.js.map": "/strago/static/js/runtime-main.df13fdca.js.map",
-    "static/css/2.de424728.chunk.css": "/strago/static/css/2.de424728.chunk.css",
-    "static/js/2.80d6f89d.chunk.js": "/strago/static/js/2.80d6f89d.chunk.js",
-    "static/js/2.80d6f89d.chunk.js.map": "/strago/static/js/2.80d6f89d.chunk.js.map",
-    "index.html": "/strago/index.html",
-    "precache-manifest.2cd5e870e90efb6d87358b31eb6431ba.js": "/strago/precache-manifest.2cd5e870e90efb6d87358b31eb6431ba.js",
-    "service-worker.js": "/strago/service-worker.js",
-    "static/css/2.de424728.chunk.css.map": "/strago/static/css/2.de424728.chunk.css.map",
-    "static/css/main.8ce39908.chunk.css.map": "/strago/static/css/main.8ce39908.chunk.css.map",
-    "static/js/2.80d6f89d.chunk.js.LICENSE.txt": "/strago/static/js/2.80d6f89d.chunk.js.LICENSE.txt",
-    "static/media/moogle.png": "/strago/static/media/moogle.d8c8ce4f.png",
-    "static/media/moogleapi.png": "/strago/static/media/moogleapi.62b31328.png",
-    "static/media/no-image-03.png": "/strago/static/media/no-image-03.15978ed8.png",
-    "static/media/no-image-04.png": "/strago/static/media/no-image-04.8038d64a.png",
-    "static/media/no-image.png": "/strago/static/media/no-image.f98b32ce.png"
+    "main.css": "/selphie/static/css/main.750527bd.chunk.css",
+    "main.js": "/selphie/static/js/main.9f5bdbfc.chunk.js",
+    "main.js.map": "/selphie/static/js/main.9f5bdbfc.chunk.js.map",
+    "runtime-main.js": "/selphie/static/js/runtime-main.df13fdca.js",
+    "runtime-main.js.map": "/selphie/static/js/runtime-main.df13fdca.js.map",
+    "static/css/2.de424728.chunk.css": "/selphie/static/css/2.de424728.chunk.css",
+    "static/js/2.80d6f89d.chunk.js": "/selphie/static/js/2.80d6f89d.chunk.js",
+    "static/js/2.80d6f89d.chunk.js.map": "/selphie/static/js/2.80d6f89d.chunk.js.map",
+    "index.html": "/selphie/index.html",
+    "precache-manifest.d646fa359a9c85a7f21ce67c8d4715ae.js": "/selphie/precache-manifest.d646fa359a9c85a7f21ce67c8d4715ae.js",
+    "service-worker.js": "/selphie/service-worker.js",
+    "static/css/2.de424728.chunk.css.map": "/selphie/static/css/2.de424728.chunk.css.map",
+    "static/css/main.750527bd.chunk.css.map": "/selphie/static/css/main.750527bd.chunk.css.map",
+    "static/js/2.80d6f89d.chunk.js.LICENSE.txt": "/selphie/static/js/2.80d6f89d.chunk.js.LICENSE.txt",
+    "static/media/moogle.png": "/selphie/static/media/moogle.d8c8ce4f.png",
+    "static/media/moogleapi.png": "/selphie/static/media/moogleapi.62b31328.png",
+    "static/media/no-image-03.png": "/selphie/static/media/no-image-03.15978ed8.png",
+    "static/media/no-image-04.png": "/selphie/static/media/no-image-04.8038d64a.png",
+    "static/media/no-image.png": "/selphie/static/media/no-image.f98b32ce.png"
   },
   "entrypoints": [
     "static/js/runtime-main.df13fdca.js",
     "static/css/2.de424728.chunk.css",
     "static/js/2.80d6f89d.chunk.js",
-    "static/css/main.8ce39908.chunk.css",
-    "static/js/main.505ef83c.chunk.js"
+    "static/css/main.750527bd.chunk.css",
+    "static/js/main.9f5bdbfc.chunk.js"
   ]
 }

@@ -85,7 +85,7 @@ function Profile(props) {
   return (
     <div>
       <Navbar />
-      <div className='form-container component'>
+      <div className='form-container form-container-profile component'>
         <div className='profile-container'>
           <img id='profile-photo' className='profile-photo' src={user.photo} alt={user.userName} onClick={handlePhotoUpload}/>
         </div>
