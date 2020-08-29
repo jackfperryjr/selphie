@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Link} from 'react-router-dom'
-import moogleAPI from '../images/moogleapi-dark.png'
+import moogleAPI from '../images/moogleapi.png'
 
 function Navbar(props) {
     let user = null

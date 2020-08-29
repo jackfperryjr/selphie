@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/strago/static/css/main.fcbc7288.chunk.css",
-    "main.js": "/strago/static/js/main.6722fce9.chunk.js",
-    "main.js.map": "/strago/static/js/main.6722fce9.chunk.js.map",
+    "main.css": "/strago/static/css/main.8ce39908.chunk.css",
+    "main.js": "/strago/static/js/main.505ef83c.chunk.js",
+    "main.js.map": "/strago/static/js/main.505ef83c.chunk.js.map",
     "runtime-main.js": "/strago/static/js/runtime-main.df13fdca.js",
     "runtime-main.js.map": "/strago/static/js/runtime-main.df13fdca.js.map",
     "static/css/2.de424728.chunk.css": "/strago/static/css/2.de424728.chunk.css",
-    "static/js/2.5dbe5842.chunk.js": "/strago/static/js/2.5dbe5842.chunk.js",
-    "static/js/2.5dbe5842.chunk.js.map": "/strago/static/js/2.5dbe5842.chunk.js.map",
+    "static/js/2.80d6f89d.chunk.js": "/strago/static/js/2.80d6f89d.chunk.js",
+    "static/js/2.80d6f89d.chunk.js.map": "/strago/static/js/2.80d6f89d.chunk.js.map",
     "index.html": "/strago/index.html",
-    "precache-manifest.d92fd33923ed0616ad91432ea9ee61f9.js": "/strago/precache-manifest.d92fd33923ed0616ad91432ea9ee61f9.js",
+    "precache-manifest.c977c2d2a7b89e6e64fb6e2158968f64.js": "/strago/precache-manifest.c977c2d2a7b89e6e64fb6e2158968f64.js",
     "service-worker.js": "/strago/service-worker.js",
     "static/css/2.de424728.chunk.css.map": "/strago/static/css/2.de424728.chunk.css.map",
-    "static/css/main.fcbc7288.chunk.css.map": "/strago/static/css/main.fcbc7288.chunk.css.map",
-    "static/js/2.5dbe5842.chunk.js.LICENSE.txt": "/strago/static/js/2.5dbe5842.chunk.js.LICENSE.txt",
+    "static/css/main.8ce39908.chunk.css.map": "/strago/static/css/main.8ce39908.chunk.css.map",
+    "static/js/2.80d6f89d.chunk.js.LICENSE.txt": "/strago/static/js/2.80d6f89d.chunk.js.LICENSE.txt",
     "static/media/moogle.png": "/strago/static/media/moogle.d8c8ce4f.png",
-    "static/media/moogleapi-dark.png": "/strago/static/media/moogleapi-dark.f5878684.png",
+    "static/media/moogleapi.png": "/strago/static/media/moogleapi.62b31328.png",
     "static/media/no-image-03.png": "/strago/static/media/no-image-03.15978ed8.png",
     "static/media/no-image-04.png": "/strago/static/media/no-image-04.8038d64a.png",
     "static/media/no-image.png": "/strago/static/media/no-image.f98b32ce.png"
@@ -23,8 +23,8 @@
   "entrypoints": [
     "static/js/runtime-main.df13fdca.js",
     "static/css/2.de424728.chunk.css",
-    "static/js/2.5dbe5842.chunk.js",
-    "static/css/main.fcbc7288.chunk.css",
-    "static/js/main.6722fce9.chunk.js"
+    "static/js/2.80d6f89d.chunk.js",
+    "static/css/main.8ce39908.chunk.css",
+    "static/js/main.505ef83c.chunk.js"
   ]
 }

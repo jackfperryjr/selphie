@@ -41,11 +41,11 @@ body {
   left: 0;
   width: 100%;
   height: 6vh;
-  background: #25282c;
+  background: #fff;
   border:transparent;
   backdrop-filter: blur(5px);
   z-index: 4000;
-  border-bottom: 1px solid #37474F;
+  border-bottom: 1px solid #eee;
 }
 .img-navbar {
   position: fixed;
@@ -73,13 +73,13 @@ footer {
   left: 0;
   width: 100%;
   height: 70px;
-  background-color: #25282c;
-  border-top: 1px solid #37474F;
+  background-color: #fff;
+  border-top: 1px solid #eee;
   font-size: 38px;
 }
 footer > div > a {
   padding:0 24px;
-  color: #37474F!important;
+  color: #b0bec5!important;
 }
 .moogle {
   border-radius: 50%;
