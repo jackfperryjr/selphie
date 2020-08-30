@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/selphie/static/css/main.7663d500.chunk.css",
+    "main.css": "/selphie/static/css/main.3a953182.chunk.css",
     "main.js": "/selphie/static/js/main.8eef4f52.chunk.js",
     "main.js.map": "/selphie/static/js/main.8eef4f52.chunk.js.map",
     "runtime-main.js": "/selphie/static/js/runtime-main.8c3c2e9c.js",
@@ -9,10 +9,10 @@
     "static/js/2.4430f167.chunk.js": "/selphie/static/js/2.4430f167.chunk.js",
     "static/js/2.4430f167.chunk.js.map": "/selphie/static/js/2.4430f167.chunk.js.map",
     "index.html": "/selphie/index.html",
-    "precache-manifest.d5a8291969376a9eb4ea30e923b5311c.js": "/selphie/precache-manifest.d5a8291969376a9eb4ea30e923b5311c.js",
+    "precache-manifest.886554f1b1beeb16190e4a22ff0e83d3.js": "/selphie/precache-manifest.886554f1b1beeb16190e4a22ff0e83d3.js",
     "service-worker.js": "/selphie/service-worker.js",
     "static/css/2.de424728.chunk.css.map": "/selphie/static/css/2.de424728.chunk.css.map",
-    "static/css/main.7663d500.chunk.css.map": "/selphie/static/css/main.7663d500.chunk.css.map",
+    "static/css/main.3a953182.chunk.css.map": "/selphie/static/css/main.3a953182.chunk.css.map",
     "static/js/2.4430f167.chunk.js.LICENSE.txt": "/selphie/static/js/2.4430f167.chunk.js.LICENSE.txt",
     "static/media/moogle.png": "/selphie/static/media/moogle.d8c8ce4f.png",
     "static/media/no-image.png": "/selphie/static/media/no-image.f98b32ce.png",
@@ -22,7 +22,7 @@
     "static/js/runtime-main.8c3c2e9c.js",
     "static/css/2.de424728.chunk.css",
     "static/js/2.4430f167.chunk.js",
-    "static/css/main.7663d500.chunk.css",
+    "static/css/main.3a953182.chunk.css",
     "static/js/main.8eef4f52.chunk.js"
   ]
 }

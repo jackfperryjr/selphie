@@ -331,14 +331,14 @@ label {
     padding-top: 10vh;
   }
   .navbar {
-    background:transparent;
+    background-color:#fff;
     border-bottom: none;
   }
   .profile-container {
     height: calc(200px + 6vmin);
   }
   .form-container {
-    margin: 100px 20% 0 20%;
+    margin: 10px 20% 0 20%;
   }
   .form-container-profile {
     margin: 0 auto;
