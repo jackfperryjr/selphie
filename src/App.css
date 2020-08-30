@@ -26,8 +26,12 @@ body {
   width: 30px;
 }
 .selphie-lg {
-  height: 90px;
-  width: 90px;
+  height: 70px;
+  width: 70px;
+}
+.selphie-index {
+  height: 66px;
+  width: 66px;
 }
 .logo {
   width: 37%;
@@ -314,11 +318,14 @@ label {
 }
 .loader {
   position: fixed;
-  top: 40%;
+  top: 47%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 @media (min-width: 768px) {
+  .loader {
+    top: 40%;
+  }
   .login-screen,
   .register-screen {
     padding-top: 10vh;

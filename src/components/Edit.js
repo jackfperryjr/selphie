@@ -30,6 +30,7 @@ function Edit(props) {
   const [show, setShow] = useState(false)
   const handleClose = () => setShow(false)
   const handleShow = () => setShow(true)
+  console.log(character)
 
   function handleChange (e) {
     let key = e.target.name
@@ -38,9 +39,58 @@ function Edit(props) {
     console.log(c)
   }
 
-  function handlePhotoUpload (e) {
+  function handlePhotoUpload () {
+    document.getElementById('upload-photo').click()
+  }
+
+  function handleProfilePhotoChange (e, photoId) {
+    let img = URL.createObjectURL(e.target.files[0]);
+    if (img) {
+      document.getElementById(''+photoId+'').src = img
+    }
+  }
+
+  function handlePhotoUpdate (e, photoId) {
     e.preventDefault()
-    console.log('not implemented')
+    let fetchUrl
+    if (validateForm()) {
+      setOverlay(true)
+      let payload = new FormData()
+      if (photoId === 'no-picture') {
+        fetchUrl = 'https://www.moogleapi.com/api/v1/pictures/add/'
+      } else {
+        fetchUrl = 'https://www.moogleapi.com/api/v1/pictures/update/'
+        payload.append('id', photoId)
+      }
+      payload.append('photo', document.forms['character-form']['upload-photo'].files[0])
+      payload.append('url', document.getElementById(''+photoId+'').src)
+      payload.append('primary', 1)
+      payload.append('collectionId', id)
+      fetch(fetchUrl, {
+        method: 'post',
+        headers: {
+          'Authorization': 'Bearer ' + token
+        }, 
+        body: payload
+      }).then(function(response) {
+        if (response.status === 200) {
+          setOverlay(false)
+          //props.history.push('/edit/' + id)
+          //return <Redirect to={'/edit/' + id} />
+        } else if (response.status === 401) {
+          localStorage.clear()
+          props.history.push('/login')
+          return <Redirect to='/login' />
+        } else if (response.status === 403) {
+          setOverlay(false)
+          setShow(true)
+          console.log('user cannot add pictures')
+        } else {
+          console.log('failed')
+          console.log(response.errors)
+        }
+      })
+    }
   }
 
   function handleStatAdd (e) {
@@ -68,8 +118,8 @@ function Edit(props) {
         body: payload
       }).then(function(response) {
         if (response.status === 200) {
-          props.history.push('/edit' + id)
-          return <Redirect to={'/edit' + id} />
+          props.history.push('/edit/' + id)
+          return <Redirect to={'/edit/' + id} />
         } else if (response.status === 401) {
           localStorage.clear()
           props.history.push('/login')
@@ -114,8 +164,8 @@ function Edit(props) {
         body: payload
       }).then(function(response) {
         if (response.status === 200) {
-          props.history.push('/edit' + id)
-          return <Redirect to={'/edit' + id} />
+          props.history.push('/edit/' + id)
+          return <Redirect to={'/edit/' + id} />
         } else if (response.status === 401) {
           localStorage.clear()
           props.history.push('/login')
@@ -145,8 +195,8 @@ function Edit(props) {
         }
       }).then(function(response) {
         if (response.status === 200) {
-          props.history.push('/edit' + id)
-          return <Redirect to={'/edit' + id} />
+          props.history.push('/edit/' + id)
+          return <Redirect to={'/edit/' + id} />
         } else if (response.status === 401) {
           localStorage.clear()
           props.history.push('/login')
@@ -189,8 +239,8 @@ function Edit(props) {
         body: payload
       }).then(function(response) {
         if (response.status === 200) {
-          props.history.push('/edit' + id)
-          return <Redirect to={'/edit' + id} />
+          props.history.push('/edit/' + id)
+          return <Redirect to={'/edit/' + id} />
         } else if (response.status === 401) {
           localStorage.clear()
           props.history.push('/login')
@@ -264,13 +314,14 @@ function Edit(props) {
 
   if (character) {
     let x = character
-    let primaryImage 
     
-    if (x.pictures[0]) {
-      x.pictures.map(i => {(i.primary === 1) ? primaryImage = i.url : primaryImage = defaultImage})
-    } else {
-      primaryImage = defaultImage
-    }
+    if (!x.pictures[0]) {
+      let obj = new Object()
+      obj.id = 'no-picture'
+      obj.url = defaultImage
+      obj.primary = 1
+      x.pictures.push(obj)
+    } 
 
     return (
       <>
@@ -293,16 +344,17 @@ function Edit(props) {
               </Modal.Footer>
           </Modal>
         <div className='overlay' style={{display: (overlay) ? 'block' : 'none'}}>
-          <span className='loader text-primary'><i className='fas fa-circle-notch fa-spin fa-5x'></i></span>
+          <span className='loader text-primary'><img className='selphie-lg fa-spin' src={selphie} /></span>
         </div>
-          <form name='character-form' id='character-form' encType='multipart/form-data' method='put'>
+          <form name='character-form' id='character-form' encType='multipart/form-data' method='post'>
             <div className='row'>
               <div className='col-sm-8 col-md-8'>
                 <div className='row'>
                   <div className='col-sm-6 col-md-6'>
-                    <img className='img-character-profile' src={primaryImage} alt={x.name} />
+                    <img id={x.pictures[0].id} className='img-character-profile' src={x.pictures[0].url} alt={x.name} onClick={handlePhotoUpload} />
+                    <input id="upload-photo" type="file" accept="image/*" name="photo" onChange={e => { handleProfilePhotoChange(e, x.pictures[0].id) }} />
                     <div className='button-container'>
-                    <button type='submit' title='Update Photo' className='btn btn-primary btn-profile' onClick={e => { handlePhotoUpload(e) }}>Update Photo</button>
+                      <button type='submit' title='Update Photo' className='btn btn-primary btn-profile' onClick={e => { handlePhotoUpdate(e, x.pictures[0].id) }}>Update Photo</button>
                     </div>
                   </div>
                   <div className='col-sm-6 col-md-6'>
@@ -552,7 +604,7 @@ function Edit(props) {
                       />
                       <label>spirit</label>
                     </div>
-                    <div className='button-container float-right'>
+                    <div className='button-container'>
                         <button type='submit' title='Delete' className='btn btn-secondary btn-profile mr-2' onClick={e => { handleStatDelete(e, x.id) }}>Delete Stats</button>
                         <button type='submit' title='Update Stats' className='btn btn-primary btn-profile ml-2' onClick={e => { handleStatUpdate(e, x.id) }}>Update Stats</button>
                       </div>
