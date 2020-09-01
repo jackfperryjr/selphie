@@ -344,7 +344,7 @@ function Edit(props) {
               </Modal.Footer>
           </Modal>
         <div className='overlay' style={{display: (overlay) ? 'block' : 'none'}}>
-          <span className='loader text-primary'><img className='selphie-lg fa-spin' src={selphie} /></span>
+          <span className='loader text-primary'><img className='selphie-index fa-spin' src={selphie} /></span>
         </div>
           <form name='character-form' id='character-form' encType='multipart/form-data' method='post'>
             <div className='row'>
@@ -624,7 +624,7 @@ function Edit(props) {
       <>
       <Navbar />
       <div>
-        <span className='loader text-primary'><img className='selphie fa-spin' src={selphie} /></span>
+        <span className='loader text-primary'><img className='selphie-index fa-spin' src={selphie} /></span>
       </div>
       <Footer />
       </>

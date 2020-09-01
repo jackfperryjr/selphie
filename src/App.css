@@ -91,10 +91,10 @@ footer {
   height: 70px;
   background-color: #fff;
   border-top: 1px solid #eee;
-  font-size: 38px;
+  font-size: 26px;
 }
 footer > div > a {
-  padding:0 24px;
+  padding:0 28px;
   color: #b0bec5!important;
 }
 .moogle {
