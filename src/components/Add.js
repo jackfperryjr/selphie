@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import moogleImage from '../icons/moogle.png'
+import selphie from '../icons/selphie.png'
 
 function Add(props) {
   const [isVisible, setVisible] = useState(false)
@@ -93,7 +94,7 @@ function Add(props) {
               </Modal.Footer>
           </Modal>
         <div className='overlay' style={{display: (overlay) ? 'block' : 'none'}}>
-          <span className='loader text-primary'><i className='fas fa-circle-notch fa-spin fa-5x'></i></span>
+          <span className='loader text-primary'><img className='selphie-index fa-spin' src={selphie} /></span>
         </div>
           <form name='character-form' id='character-form' encType='multipart/form-data' method='put'>
             <div className='row'>
