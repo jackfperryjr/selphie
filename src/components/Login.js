@@ -62,7 +62,7 @@ function Login(props) {
   return (
     <div className='form-container login-screen'>
       <div className='overlay' style={{display: (overlay) ? 'block' : 'none'}}>
-        <span className='loader text-primary'><img className='selphie fa-spin' src={selphie} /></span>
+        <span className='loader text-primary'><img className='selphie-index fa-spin' src={selphie} /></span>
       </div>
       <p>Enter credentials</p>
       <form>
