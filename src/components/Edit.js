@@ -239,9 +239,11 @@ function Edit(props) {
         body: payload
       }).then(function(response) {
         if (response.status === 200) {
+          setOverlay(false)
           props.history.push('/edit/' + id)
           return <Redirect to={'/edit/' + id} />
         } else if (response.status === 401) {
+          setOverlay(false)
           localStorage.clear()
           props.history.push('/login')
           return <Redirect to='/login' />
