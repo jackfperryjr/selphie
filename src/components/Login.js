@@ -43,6 +43,7 @@ function Login(props) {
             setAuthToken(response.token)
             setLoggedIn(true)
             localStorage.setItem('user', JSON.stringify(response.user))
+            localStorage.setItem('component', JSON.stringify('index'))
           } else {
             console.log(response.message)
             document.getElementById('login-error').style.display = 'block'

@@ -17,7 +17,7 @@ body {
   border-bottom: 1px solid #37474F;
 }
 footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -29,6 +29,9 @@ footer {
 footer > div > a {
   padding:0 28px;
   color: #37474F!important;
+}
+.footer-active {
+  color: #9933CC!important;
 }
 .component {
   position: fixed;
