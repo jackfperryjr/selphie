@@ -361,7 +361,7 @@ function Edit(props) {
                     <img id={x.pictures[0].id} className='img-character-profile' src={x.pictures[0].url} alt={x.name} onClick={handlePhotoUpload} />
                     <input id="upload-photo" type="file" accept="image/*" name="photo" onChange={e => { handleProfilePhotoChange(e, x.pictures[0].id) }} />
                     <div className='button-container'>
-                      <p title='Update Photo' className='text-muted' onClick={e => { handlePhotoUpdate(e, x.pictures[0].id) }}>Update Photo</p>
+                      <p title='Update Photo' className='text-muted pointer' onClick={e => { handlePhotoUpdate(e, x.pictures[0].id) }}>Update Photo</p>
                     </div>
                   </div>
                   <div className='col-sm-6 col-md-6'>
@@ -438,8 +438,8 @@ function Edit(props) {
                         <label>description</label>
                       </div>
                       <div className='button-container'>
-                        <p title='Delete' className='text-danger mr-2' onClick={e => { handleCharacterDelete(e) }}>Delete Character</p>
-                        <p title='Save' className='text-muted ml-2' onClick={e => { handleCharacterUpdate(e) }}>Update Character</p>
+                        <p title='Delete' className='text-danger mr-2 pointer' onClick={e => { handleCharacterDelete(e) }}>Delete Character</p>
+                        <p title='Save' className='text-muted ml-2 pointer' onClick={e => { handleCharacterUpdate(e) }}>Update Character</p>
                       </div>
                   </div>
                 </div>
@@ -528,7 +528,7 @@ function Edit(props) {
                     <label>spirit</label>
                   </div>
                   <div className='button-container'>
-                    <p title='Save Stats' className='text-muted' onClick={e => { handleStatAdd(e) }}>Add Stats</p>
+                    <p title='Save Stats' className='text-muted pointer' onClick={e => { handleStatAdd(e) }}>Add Stats</p>
                   </div>
                 </div>
                 {x.stats.map
@@ -612,8 +612,8 @@ function Edit(props) {
                       <label>spirit</label>
                     </div>
                     <div className='button-container'>
-                        <p title='Delete' className='text-danger mr-2' onClick={e => { handleStatDelete(e, x.id) }}>Delete Stats</p>
-                        <p title='Update Stats' className='text-muted ml-2' onClick={e => { handleStatUpdate(e, x.id) }}>Update Stats</p>
+                        <p title='Delete' className='text-danger mr-2 pointer' onClick={e => { handleStatDelete(e, x.id) }}>Delete Stats</p>
+                        <p title='Update Stats' className='text-muted ml-2 pointer' onClick={e => { handleStatUpdate(e, x.id) }}>Update Stats</p>
                       </div>
                     </div>
                   )

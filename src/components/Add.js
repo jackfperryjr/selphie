@@ -168,7 +168,7 @@ function Add(props) {
                         <label>description</label>
                       </div>
                       <div className='button-container'>
-                        <p title='Add Character' className='text-muted' onClick={e => { handleCharacterAdd(e) }}>Add Character</p>
+                        <p title='Add Character' className='text-muted pointer' onClick={e => { handleCharacterAdd(e) }}>Add Character</p>
                       </div>
                   </div>
                 </div>

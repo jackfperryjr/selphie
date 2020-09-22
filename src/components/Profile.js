@@ -92,41 +92,41 @@ function Profile(props) {
         <form name='profile-form' id='profile-form' className='profile-form' encType='multipart/form-data' method='put'>
           <p className='font-weight-bold login-username'>{user.userName}</p>
           <p className='font-small text-secondary'>Joined {moment(user.joinDate).format('MMMM DD, YYYY')}</p>
-          <div className='input-group'>
+          <div className='input-group mb-2'>
               <input type='text' className='form-control login-username' defaultValue={user.userName} placeholder='user name'  onChange={e => { setUsername(e.target.value) }} />
               </div>
-          <div className='input-group'>
+          <div className='input-group mb-2'>
               <input type='text' className='form-control' defaultValue={user.email} placeholder='email' onChange={e => { setEmail(e.target.value) }} />
           </div>
-          <div className='input-group'>
+          <div className='input-group mb-2'>
               <input type='text' className='form-control' defaultValue={user.firstName} placeholder='first name' onChange={e => { setFirstname(e.target.value) }} />
               </div>
-          <div className='input-group'>
+          <div className='input-group mb-2'>
               <input type='text' className='form-control' defaultValue={user.lastName} placeholder='last name'  onChange={e => { setLastname(e.target.value) }} />
           </div>
-          <div className='input-group'>
+          <div className='input-group mb-2'>
               <input type='number' className='form-control' defaultValue={user.age} placeholder='00' onChange={e => { setAge(e.target.value) }} />
               </div>
-          <div className='input-group'>
+          <div className='input-group mb-2'>
               <input type='date' className='form-control' defaultValue={moment(user.birthDate).format('YYYY-MM-DD')}  onChange={e => { setBirthdate(e.target.value) }} />
           </div>
-          <div className='input-group'>
+          <div className='input-group mb-2'>
               <input type='text' className='form-control' defaultValue={user.city} placeholder='city' onChange={e => { setCity(e.target.value) }} />
               </div>
-          <div className='input-group'>
+          <div className='input-group mb-2'>
               <input type='text' className='form-control' defaultValue={user.state} placeholder='state' onChange={e => { setState(e.target.value) }} />
           </div>
           <div id='validation-error'>form validation failed</div>
           <input id="upload-photo" type="file" accept="image/*" name="photo" onChange={e => { handleProfilePhotoChange(e) }} />
           <div className='button-container'>
-            <div className='row'>
-              <div className='col-md-12'>
-                <p title='Logout' className='text-muted' onClick={handleLogout}>Logout</p>
+            <div className='row small'>
+              <div className='col-md-12 small'>
+                <p title='Logout' className='text-muted pointer' onClick={handleLogout}>Logout</p>
               </div>
             </div>
-            <div className='row'>
-              <div className='col-md-12'>
-                <p title='Update Information' className='text-muted' onClick={e => { handleUserUpdate(e) }}>Update Info</p>
+            <div className='row small'>
+              <div className='col-md-12 small'>
+                <p title='Update Information' className='text-muted pointer' onClick={e => { handleUserUpdate(e) }}>Update Info</p>
               </div>
             </div>
           </div>

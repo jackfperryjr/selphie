@@ -75,7 +75,7 @@ function Login(props) {
         </div>
         <div id='login-error'>invalid credentials</div>
         <div id='validation-error'>enter your credentials</div>
-        <button type='submit' className='btn btn-primary btn-block' onClick={(e) => handleLogin(e)}>Login</button>
+        <p className='small text-muted pointer' onClick={(e) => handleLogin(e)}>Login</p>
       </form>
     </div>
     )

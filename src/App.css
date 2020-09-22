@@ -1,6 +1,6 @@
 body {
   background-color: #080808;
-  color: #000;
+  color: #fff;
   height: 100%;
   overflow: auto;
 }
@@ -43,6 +43,9 @@ footer > div > a {
   overflow-y: scroll!important;
   background-color: #000;
   color: #fff;
+}
+.pointer {
+  cursor: pointer;
 }
 .card-character {
   margin: 2px 5px;
@@ -242,7 +245,7 @@ textarea, select {
   align-items: center;
   justify-content: flex-start;
   font-size: calc(10px + 2vmin);
-  color: #000;
+  color: #fff;
 }
 .floating-label { 
   position:relative; 
@@ -278,7 +281,6 @@ label {
   -moz-transition:0.2s ease-in-out all; 
   -webkit-transition:0.2s ease-in-out all;
 }
-
 .floating-textarea:focus ~ label, 
 .floating-textarea:not(:placeholder-shown) ~ label {
   top:3px;
@@ -354,14 +356,11 @@ label {
     overflow: auto;
   }
   .component {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
     height: 100%;
     padding-bottom: 120px;
     overflow-y: scroll!important;
     background-color: #fff;
+    color: #000;
   }
   .card-character {
     margin: 2px 5px;
@@ -389,6 +388,7 @@ label {
   }
   .form-container {
     margin: 10px 20% 0 20%;
+    color: #000;
   }
   .form-container-profile {
     margin: 0 auto;
@@ -406,6 +406,11 @@ label {
     height: calc(10px + 4vmin);
     width: calc(10px + 4vmin);
     object-fit: cover;
+  }
+  .row-feed {
+    width: 60%;
+    max-width: 700px;
+    margin: 0 auto!important;
   }
   .img-feed {
     height: 50px;
@@ -428,6 +433,9 @@ label {
     height: calc(30px + 1vmin);
     width: calc(30px + 1vmin);
   }
+  .img-character-profile {
+    background-color: #fff;
+  }
   .img-character-profile-collection {
     margin: 20px 0;
     height: calc(50px + 4vmin);
@@ -437,11 +445,38 @@ label {
   .col-sm-6 {
     margin: 0;
   }
-  .button-container {
-    float: right;
-  }
   footer {
     display: none;
+  }
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="date"],
+  input[type="number"],
+  input[type="text"]:focus,
+  input[type="password"]:focus,
+  input[type="email"]:focus,
+  input[type="date"]:focus,
+  input[type="number"]:focus  {
+    color: #000;
+    background-color: #fff;
+  }
+  textarea, select {
+    background-color: #fff!important;
+    color: #000!important;
+  }
+  .character-form-control {
+    color: #000;
+  }
+  .floating-input:focus ~ label, 
+  .floating-input:not(:placeholder-shown) ~ label {
+    color:#000;
+    background-color: #fff!important;
+  }
+  .floating-textarea:focus ~ label, 
+  .floating-textarea:not(:placeholder-shown) ~ label {
+    color:#000;
+    background-color: #fff!important;
   }
 }
 
