@@ -4,6 +4,7 @@ import { HashRouter as HashRouter } from 'react-router-dom'
 import { AuthContext } from './context/auth'
 import PrivateRoute from './PrivateRoute'
 import login from './components/Login'
+import feed from './components/Feed'
 import profile from './components/Profile'
 import index from './components/Index'
 import edit from './components/Edit'
@@ -26,6 +27,7 @@ function App(props) {
       <HashRouter basename='/'>
         <PrivateRoute exact path='/' component={index} />
         <Route exact path='/login/' component={login} />
+        <PrivateRoute exact path='/feed/' component={feed} />
         <PrivateRoute exact path='/profile/' component={profile} />
         <PrivateRoute exact path='/add/' component={add} />
         <PrivateRoute exact path='/edit/:id/' component={edit} />

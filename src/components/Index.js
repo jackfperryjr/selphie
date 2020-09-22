@@ -55,7 +55,7 @@ function Index(props) {
       <>
       <Navbar />
       <div className='component'>
-        <span className='loader text-primary'><img className='selphie-index fa-spin' src={selphie} /></span>
+        <span className='loader text-primary'><i className="fab fa-superpowers fa-spin text-muted"></i></span>
       </div>
       <Footer />
       </>

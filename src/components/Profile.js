@@ -94,22 +94,26 @@ function Profile(props) {
           <p className='font-small text-secondary'>Joined {moment(user.joinDate).format('MMMM DD, YYYY')}</p>
           <div className='input-group'>
               <input type='text' className='form-control login-username' defaultValue={user.userName} placeholder='user name'  onChange={e => { setUsername(e.target.value) }} />
-              <span>&nbsp;</span>
+              </div>
+          <div className='input-group'>
               <input type='text' className='form-control' defaultValue={user.email} placeholder='email' onChange={e => { setEmail(e.target.value) }} />
           </div>
           <div className='input-group'>
               <input type='text' className='form-control' defaultValue={user.firstName} placeholder='first name' onChange={e => { setFirstname(e.target.value) }} />
-              <span>&nbsp;</span>
+              </div>
+          <div className='input-group'>
               <input type='text' className='form-control' defaultValue={user.lastName} placeholder='last name'  onChange={e => { setLastname(e.target.value) }} />
           </div>
           <div className='input-group'>
               <input type='number' className='form-control' defaultValue={user.age} placeholder='00' onChange={e => { setAge(e.target.value) }} />
-              <span>&nbsp;</span>
+              </div>
+          <div className='input-group'>
               <input type='date' className='form-control' defaultValue={moment(user.birthDate).format('YYYY-MM-DD')}  onChange={e => { setBirthdate(e.target.value) }} />
           </div>
           <div className='input-group'>
               <input type='text' className='form-control' defaultValue={user.city} placeholder='city' onChange={e => { setCity(e.target.value) }} />
-              <span>&nbsp;</span>
+              </div>
+          <div className='input-group'>
               <input type='text' className='form-control' defaultValue={user.state} placeholder='state' onChange={e => { setState(e.target.value) }} />
           </div>
           <div id='validation-error'>form validation failed</div>
@@ -117,18 +121,12 @@ function Profile(props) {
           <div className='button-container'>
             <div className='row'>
               <div className='col-md-12'>
-                <button type='submit' title='Logout' className='btn btn-primary btn-profile' onClick={handleLogout}><i className='fas fa-door-closed'></i></button>
-              </div>
-              <div className='col-md-12'>
-                <p className='font-small'>logout</p>
+                <p title='Logout' className='text-muted' onClick={handleLogout}>Logout</p>
               </div>
             </div>
             <div className='row'>
               <div className='col-md-12'>
-                <button type='submit' title='Update Information' className='btn btn-success btn-profile' onClick={e => { handleUserUpdate(e) }}><i className='fas fa-user-edit'></i></button>
-              </div>
-              <div className='col-md-12'>
-                <p className='font-small'>update info</p>
+                <p title='Update Information' className='text-muted' onClick={e => { handleUserUpdate(e) }}>Update Info</p>
               </div>
             </div>
           </div>

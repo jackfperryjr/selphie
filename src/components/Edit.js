@@ -27,17 +27,9 @@ function Edit(props) {
   const [isVisible, setVisible] = useState(false)
   const token = JSON.parse(localStorage.token)
   const [overlay, setOverlay] = useState(false)
-  const [show, setShow] = useState(false)
+  const [noAccess, setShow] = useState(false)
   const handleClose = () => setShow(false)
   const handleShow = () => setShow(true)
-  console.log(character)
-
-  function handleChange (e) {
-    let key = e.target.name
-    let value = e.target.value
-    setCharacter({ ...character, [key]: value })
-    console.log(c)
-  }
 
   function handlePhotoUpload () {
     document.getElementById('upload-photo').click()
@@ -95,7 +87,7 @@ function Edit(props) {
 
   function handleStatAdd (e) {
     e.preventDefault()
-    if (validateForm()) {
+    if (validateForm(1)) {
       setOverlay(true)
       let payload = new FormData()
       payload.append('platform', document.getElementById('1').querySelector('[name="platform"]').value)
@@ -155,7 +147,6 @@ function Edit(props) {
       payload.append('magicDefense', document.getElementById(''+statId+'').querySelector('[name="magicDefense"]').value)
       payload.append('agility', document.getElementById(''+statId+'').querySelector('[name="agility"]').value)
       payload.append('spirit', document.getElementById(''+statId+'').querySelector('[name="spirit"]').value)
-      debugger
       fetch('https://www.moogleapi.com/api/v1/stats/update/' + statId, {
         method: 'put',
         headers: {
@@ -301,17 +292,30 @@ function Edit(props) {
     document.getElementById(e.target.value).style.display = 'block'
   }
 
-  function validateForm () {
-    // let error = 0
+  function validateForm (form) {
+    let error = 0
 
-    // if (error === 1) {
-    //   document.getElementById('validation-error').style.display = 'block'
-    //   return false
-    // } else {
-    //   document.getElementById('validation-error').style.display = 'none'
-    //   return true
-    // }
-    return true
+    if (form && form === 1) {
+      document.getElementById('1').querySelector('[name="platform"]').value > 0 ? error = 0 : error = 1
+      document.getElementById('1').querySelector('[name="class"]').value > 0 ? error = 0 : error = 1
+      document.getElementById('1').querySelector('[name="level"]').value > 0 ? error = 0 : error = 1
+      document.getElementById('1').querySelector('[name="hitPoints"]').value > 0 ? error = 0 : error = 1
+      document.getElementById('1').querySelector('[name="manaPoints"]').value > 0 ? error = 0 : error = 1
+      document.getElementById('1').querySelector('[name="attack"]').value > 0 ? error = 0 : error = 1
+      document.getElementById('1').querySelector('[name="defense"]').value > 0 ? error = 0 : error = 1
+      document.getElementById('1').querySelector('[name="magic"]').value > 0 ? error = 0 : error = 1
+      document.getElementById('1').querySelector('[name="magicDefense"]').value > 0 ? error = 0 : error = 1
+      document.getElementById('1').querySelector('[name="agility"]').value > 0 ? error = 0 : error = 1
+      document.getElementById('1').querySelector('[name="spirit"]').value > 0 ? error = 0 : error = 1
+    }
+
+    if (error === 0) {
+      document.getElementById('validation-error').style.display = 'none'
+      return true
+    } else {
+      document.getElementById('validation-error').style.display = 'block'
+      return false
+    }
   }
 
   if (character) {
@@ -330,7 +334,7 @@ function Edit(props) {
       <Navbar />
       <div className='component'>
         <div className='container top-margin'>
-          <Modal show={show} onHide={handleClose}
+          <Modal show={noAccess} onHide={handleClose}
               {...props}
               size="md"
               aria-labelledby="contained-modal-title-vcenter"
@@ -346,8 +350,9 @@ function Edit(props) {
               </Modal.Footer>
           </Modal>
         <div className='overlay' style={{display: (overlay) ? 'block' : 'none'}}>
-          <span className='loader text-primary'><img className='selphie-index fa-spin' src={selphie} /></span>
+          <span className='loader text-primary'><i className="fab fa-superpowers fa-spin text-muted"></i></span>
         </div>
+        <div id='validation-error'>form validation failed</div>
           <form name='character-form' id='character-form' encType='multipart/form-data' method='post'>
             <div className='row'>
               <div className='col-sm-8 col-md-8'>
@@ -356,7 +361,7 @@ function Edit(props) {
                     <img id={x.pictures[0].id} className='img-character-profile' src={x.pictures[0].url} alt={x.name} onClick={handlePhotoUpload} />
                     <input id="upload-photo" type="file" accept="image/*" name="photo" onChange={e => { handleProfilePhotoChange(e, x.pictures[0].id) }} />
                     <div className='button-container'>
-                      <button type='submit' title='Update Photo' className='btn btn-primary btn-profile' onClick={e => { handlePhotoUpdate(e, x.pictures[0].id) }}>Update Photo</button>
+                      <p title='Update Photo' className='text-muted' onClick={e => { handlePhotoUpdate(e, x.pictures[0].id) }}>Update Photo</p>
                     </div>
                   </div>
                   <div className='col-sm-6 col-md-6'>
@@ -433,8 +438,8 @@ function Edit(props) {
                         <label>description</label>
                       </div>
                       <div className='button-container'>
-                        <button type='submit' title='Delete' className='btn btn-secondary btn-profile mr-2' onClick={e => { handleCharacterDelete(e) }}>Delete Character</button>
-                        <button type='submit' title='Save' className='btn btn-primary btn-profile ml-2' onClick={e => { handleCharacterUpdate(e) }}>Update Character</button>
+                        <p title='Delete' className='text-danger mr-2' onClick={e => { handleCharacterDelete(e) }}>Delete Character</p>
+                        <p title='Save' className='text-muted ml-2' onClick={e => { handleCharacterUpdate(e) }}>Update Character</p>
                       </div>
                   </div>
                 </div>
@@ -523,7 +528,7 @@ function Edit(props) {
                     <label>spirit</label>
                   </div>
                   <div className='button-container'>
-                    <button type='submit' title='Save Stats' className='btn btn-primary btn-profile' onClick={e => { handleStatAdd(e) }}>Add Stats</button>
+                    <p title='Save Stats' className='text-muted' onClick={e => { handleStatAdd(e) }}>Add Stats</p>
                   </div>
                 </div>
                 {x.stats.map
@@ -607,8 +612,8 @@ function Edit(props) {
                       <label>spirit</label>
                     </div>
                     <div className='button-container'>
-                        <button type='submit' title='Delete' className='btn btn-secondary btn-profile mr-2' onClick={e => { handleStatDelete(e, x.id) }}>Delete Stats</button>
-                        <button type='submit' title='Update Stats' className='btn btn-primary btn-profile ml-2' onClick={e => { handleStatUpdate(e, x.id) }}>Update Stats</button>
+                        <p title='Delete' className='text-danger mr-2' onClick={e => { handleStatDelete(e, x.id) }}>Delete Stats</p>
+                        <p title='Update Stats' className='text-muted ml-2' onClick={e => { handleStatUpdate(e, x.id) }}>Update Stats</p>
                       </div>
                     </div>
                   )
@@ -625,8 +630,8 @@ function Edit(props) {
     return (
       <>
       <Navbar />
-      <div>
-        <span className='loader text-primary'><img className='selphie-index fa-spin' src={selphie} /></span>
+      <div className='component'>
+        <span className='loader text-primary'><i className="fab fa-superpowers fa-spin text-muted"></i></span>
       </div>
       <Footer />
       </>

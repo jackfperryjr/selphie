@@ -7,13 +7,17 @@ function Footer(props) {
       user = JSON.parse(localStorage.user)
     }
 
+    function handleClick (e) {
+
+    }
+
   return (
     <footer>
         <div className='d-flex justify-content-center'>
-            <Link to='/'><i className="fas fa-home"></i></Link>
-            <Link to='/'><i className="fab fa-fort-awesome-alt"></i></Link>
-            <Link to='/add'><i className="fas fa-plus-circle"></i></Link>
-            <Link to='/profile'><i className="fas fa-user-circle"></i></Link>
+            <Link to='/feed'><i className="fas fa-stream"></i></Link>
+            <Link to='/'><i className="fas fa-clipboard-list"></i></Link>
+            <Link to='/add'><span className='small'>+</span><i className="fas fa-scroll"></i></Link>
+            <Link to='/profile'><i className="fas fa-address-card"></i></Link>
         </div>
     </footer>
     )

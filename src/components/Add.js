@@ -94,7 +94,7 @@ function Add(props) {
               </Modal.Footer>
           </Modal>
         <div className='overlay' style={{display: (overlay) ? 'block' : 'none'}}>
-          <span className='loader text-primary'><img className='selphie-index fa-spin' src={selphie} /></span>
+          <span className='loader text-primary'><i className="fab fa-superpowers fa-spin text-muted"></i></span>
         </div>
           <form name='character-form' id='character-form' encType='multipart/form-data' method='put'>
             <div className='row'>
@@ -168,7 +168,7 @@ function Add(props) {
                         <label>description</label>
                       </div>
                       <div className='button-container'>
-                        <button type='submit' title='Add Character' className='btn btn-primary btn-profile' onClick={e => { handleCharacterAdd(e) }}>Add Character</button>
+                        <p title='Add Character' className='text-muted' onClick={e => { handleCharacterAdd(e) }}>Add Character</p>
                       </div>
                   </div>
                 </div>
