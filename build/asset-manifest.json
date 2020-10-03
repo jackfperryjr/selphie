@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/selphie/static/css/main.6ad8a428.chunk.css",
-    "main.js": "/selphie/static/js/main.6b3aafe9.chunk.js",
-    "main.js.map": "/selphie/static/js/main.6b3aafe9.chunk.js.map",
+    "main.css": "/selphie/static/css/main.443d5541.chunk.css",
+    "main.js": "/selphie/static/js/main.c6533612.chunk.js",
+    "main.js.map": "/selphie/static/js/main.c6533612.chunk.js.map",
     "runtime-main.js": "/selphie/static/js/runtime-main.8c3c2e9c.js",
     "runtime-main.js.map": "/selphie/static/js/runtime-main.8c3c2e9c.js.map",
     "static/css/2.de424728.chunk.css": "/selphie/static/css/2.de424728.chunk.css",
     "static/js/2.dfa64993.chunk.js": "/selphie/static/js/2.dfa64993.chunk.js",
     "static/js/2.dfa64993.chunk.js.map": "/selphie/static/js/2.dfa64993.chunk.js.map",
     "index.html": "/selphie/index.html",
-    "precache-manifest.73f957b064586f9544b39bc6e643ea27.js": "/selphie/precache-manifest.73f957b064586f9544b39bc6e643ea27.js",
+    "precache-manifest.cd8a8993e3667c7ccddad9c44ce5ed02.js": "/selphie/precache-manifest.cd8a8993e3667c7ccddad9c44ce5ed02.js",
     "service-worker.js": "/selphie/service-worker.js",
     "static/css/2.de424728.chunk.css.map": "/selphie/static/css/2.de424728.chunk.css.map",
-    "static/css/main.6ad8a428.chunk.css.map": "/selphie/static/css/main.6ad8a428.chunk.css.map",
+    "static/css/main.443d5541.chunk.css.map": "/selphie/static/css/main.443d5541.chunk.css.map",
     "static/js/2.dfa64993.chunk.js.LICENSE.txt": "/selphie/static/js/2.dfa64993.chunk.js.LICENSE.txt",
     "static/media/moogle.png": "/selphie/static/media/moogle.d8c8ce4f.png",
     "static/media/no-image.png": "/selphie/static/media/no-image.f98b32ce.png",
@@ -22,7 +22,7 @@
     "static/js/runtime-main.8c3c2e9c.js",
     "static/css/2.de424728.chunk.css",
     "static/js/2.dfa64993.chunk.js",
-    "static/css/main.6ad8a428.chunk.css",
-    "static/js/main.6b3aafe9.chunk.js"
+    "static/css/main.443d5541.chunk.css",
+    "static/js/main.c6533612.chunk.js"
   ]
 }

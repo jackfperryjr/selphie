@@ -65,6 +65,9 @@ footer > div > a {
   margin-top: -8%;
   font-size: 12px;
 }
+.feed-reaction-count {
+  margin: 0 15px 0 5px;
+}
 .flex-row-reverse > i,
 .flex-row-reverse > svg {
   margin-left: 10px!important;

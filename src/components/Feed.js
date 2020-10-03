@@ -20,11 +20,30 @@ const useFetch = url => {
 }
 
 function Feed(props) {
-  const feed = useFetch('https://www.moogleapi.com/api/v1/feeds') // Temporary until I build the feed.
+  const feed = useFetch('https://www.moogleapi.com/api/v1/feeds')
 
-  let user = null
-  if (localStorage.user && localStorage.token) {
-    user = JSON.parse(localStorage.user)
+  function handleReactionUpdate (e, id, reaction) {
+    e.preventDefault()
+    fetch('https://www.moogleapi.com/api/v1/feeds/'+ reaction +'/' + id, {
+    method: 'put'
+    }).then(function(response) {
+        if (response.status === 200) {
+            props.history.push('/feed/')
+            return <Redirect to='/feed' />
+        } 
+        // else if (response.status === 401) {
+        //     localStorage.clear()
+        //     props.history.push('/login')
+        //     return <Redirect to='/login' />
+        // } else if (response.status === 403) {
+        //     setOverlay(false)
+        //     setShow(true)
+        //     console.log('user cannot update stats')
+        // } else {
+        //     console.log('update failed')
+        //     console.log(response.errors)
+        // }
+    })
   }
 
   if (feed) {
@@ -55,9 +74,9 @@ function Feed(props) {
                             </div>
                         </div>
                         <div className='row text-muted pb-3 flex-row-reverse'>
-                            <i className="far fa-heart"></i>
-                            <i className="far fa-thumbs-down"></i>
-                            <i className="far fa-thumbs-up"></i>
+                            <span className='pointer' onClick={e => { handleReactionUpdate(e, x.id, "love") }}><i className="far fa-heart"></i><span className='small feed-reaction-count'>{x.love}</span></span>
+                            <span className='pointer' onClick={e => { handleReactionUpdate(e, x.id, "dislike") }}><i className="far fa-thumbs-down"></i><span className='small feed-reaction-count'>{x.dislike}</span></span>
+                            <span className='pointer' onClick={e => { handleReactionUpdate(e, x.id, "like") }}><i className="far fa-thumbs-up"></i><span className='small feed-reaction-count'>{x.like}</span></span>
                         </div>
                     </div>
                 </div>
