@@ -27,7 +27,7 @@ function App(props) {
       <HashRouter basename='/'>
         <PrivateRoute exact path='/' component={index} />
         <Route exact path='/login/' component={login} />
-        <PrivateRoute exact path='/feed/' component={feed} />
+        <Route exact path='/feed/' component={feed} />
         <PrivateRoute exact path='/profile/' component={profile} />
         <PrivateRoute exact path='/add/' component={add} />
         <PrivateRoute exact path='/edit/:id/' component={edit} />
