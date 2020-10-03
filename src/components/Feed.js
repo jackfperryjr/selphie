@@ -28,21 +28,8 @@ function Feed(props) {
     method: 'put'
     }).then(function(response) {
         if (response.status === 200) {
-            props.history.push('/feed/')
-            return <Redirect to='/feed' />
-        } 
-        // else if (response.status === 401) {
-        //     localStorage.clear()
-        //     props.history.push('/login')
-        //     return <Redirect to='/login' />
-        // } else if (response.status === 403) {
-        //     setOverlay(false)
-        //     setShow(true)
-        //     console.log('user cannot update stats')
-        // } else {
-        //     console.log('update failed')
-        //     console.log(response.errors)
-        // }
+            // TODO: update state?
+        }
     })
   }
 
