@@ -36,22 +36,28 @@ function Feed(props) {
             {feed.map
               (x =>
                 <>
-                <div className='row row-feed mx-3 mb-2'>
-                    <div className='col-xs-1 col-sm-1 col-md-4 col-lg-4'>
+                <div className='row row-feed mx-3 mb-2 pt-2'>
+                    <div className='col-xs-1 col-sm-1 col-md-5 col-lg-5'>
                         <img className='img-feed' src={x.userPhoto} alt={x.userName} />
                         <span className='ml-3 align-top text-muted'>{x.userName}</span>
+                        <p className='feed-timestamp text-muted'>{moment(x.timeStamp).local().format('MMMM D, YYYY [at] h:mm a')}</p>
                     </div>
                     <div className='col-xs-11 col-sm-11 col-md-11 col-lg-11'>
                         <div className='row mb-3'>
                             <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 text-left feed-text'>
-                                {x.update === 1 ? <span><Link to={'/edit/' + x.characterId}>{x.characterName}</Link> was updated on {moment(x.timeStamp).format('MMMM DD, YYYY')}</span> : '' }
-                                {x.addition === 1 ? <span>{x.characterName} was added on {moment(x.timeStamp).format('MMMM DD, YYYY')}</span> : '' }
-                                {x.deletion === 1 ? <span>{x.characterName} was deleted on {moment(x.timeStamp).format('MMMM DD, YYYY')}</span> : '' }
-                                {x.photoUpdate === 1 ? <span>{x.userFirstName} updated <Link to={'/edit/' + x.characterId}>{x.characterName}</Link>'s photo on {moment(x.timeStamp).format('MMMM DD, YYYY')}</span> : '' }
-                                {x.statUpdate === 1 ? <span>{x.characterName} had some stats updated on {moment(x.timeStamp).format('MMMM DD, YYYY')}</span> : '' }
-                                {x.statAddition === 1 ? <span><Link to={'/edit/' + x.characterId}>{x.characterName}</Link> had some stats added by {x.userFirstName} on {moment(x.timeStamp).format('MMMM DD, YYYY')}</span> : '' }
-                                {x.statDeletion === 1 ? <span>{x.characterName} had some stats deleted {moment(x.timeStamp).format('MMMM DD, YYYY')}</span> : '' }
+                                {x.update === 1 ? <span><Link to={'/edit/' + x.characterId}>{x.characterName}</Link> had something updated in their general information.</span> : '' }
+                                {x.addition === 1 ? <span>{x.characterName} was added to the API!</span> : '' }
+                                {x.deletion === 1 ? <span>{x.characterName} was deleted :(</span> : '' }
+                                {x.photoUpdate === 1 ? <span>{x.userFirstName} changed <Link to={'/edit/' + x.characterId}>{x.characterName}</Link>'s photo. Not sure why.</span> : '' }
+                                {x.statUpdate === 1 ? <span>{x.characterName} had some stats updated.</span> : '' }
+                                {x.statAddition === 1 ? <span><Link to={'/edit/' + x.characterId}>{x.characterName}</Link> had some stats added by {x.userFirstName}. I hope they know what they're doing.</span> : '' }
+                                {x.statDeletion === 1 ? <span>{x.characterName} had some stats deleted. I guess they weren't needed.</span> : '' }
                             </div>
+                        </div>
+                        <div className='row text-muted pb-3 flex-row-reverse'>
+                            <i className="far fa-heart"></i>
+                            <i className="far fa-thumbs-down"></i>
+                            <i className="far fa-thumbs-up"></i>
                         </div>
                     </div>
                 </div>

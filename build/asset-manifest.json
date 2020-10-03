@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/selphie/static/css/main.07c729f3.chunk.css",
-    "main.js": "/selphie/static/js/main.7fb61105.chunk.js",
-    "main.js.map": "/selphie/static/js/main.7fb61105.chunk.js.map",
+    "main.css": "/selphie/static/css/main.6ad8a428.chunk.css",
+    "main.js": "/selphie/static/js/main.387f833b.chunk.js",
+    "main.js.map": "/selphie/static/js/main.387f833b.chunk.js.map",
     "runtime-main.js": "/selphie/static/js/runtime-main.8c3c2e9c.js",
     "runtime-main.js.map": "/selphie/static/js/runtime-main.8c3c2e9c.js.map",
     "static/css/2.de424728.chunk.css": "/selphie/static/css/2.de424728.chunk.css",
-    "static/js/2.386aacb8.chunk.js": "/selphie/static/js/2.386aacb8.chunk.js",
-    "static/js/2.386aacb8.chunk.js.map": "/selphie/static/js/2.386aacb8.chunk.js.map",
+    "static/js/2.dfa64993.chunk.js": "/selphie/static/js/2.dfa64993.chunk.js",
+    "static/js/2.dfa64993.chunk.js.map": "/selphie/static/js/2.dfa64993.chunk.js.map",
     "index.html": "/selphie/index.html",
-    "precache-manifest.68c7a246b74790c6facd37df34f27293.js": "/selphie/precache-manifest.68c7a246b74790c6facd37df34f27293.js",
+    "precache-manifest.3b122fc46d819c125f71160184099cf7.js": "/selphie/precache-manifest.3b122fc46d819c125f71160184099cf7.js",
     "service-worker.js": "/selphie/service-worker.js",
     "static/css/2.de424728.chunk.css.map": "/selphie/static/css/2.de424728.chunk.css.map",
-    "static/css/main.07c729f3.chunk.css.map": "/selphie/static/css/main.07c729f3.chunk.css.map",
-    "static/js/2.386aacb8.chunk.js.LICENSE.txt": "/selphie/static/js/2.386aacb8.chunk.js.LICENSE.txt",
+    "static/css/main.6ad8a428.chunk.css.map": "/selphie/static/css/main.6ad8a428.chunk.css.map",
+    "static/js/2.dfa64993.chunk.js.LICENSE.txt": "/selphie/static/js/2.dfa64993.chunk.js.LICENSE.txt",
     "static/media/moogle.png": "/selphie/static/media/moogle.d8c8ce4f.png",
     "static/media/no-image.png": "/selphie/static/media/no-image.f98b32ce.png",
     "static/media/selphie.png": "/selphie/static/media/selphie.d8fe446d.png"
@@ -21,8 +21,8 @@
   "entrypoints": [
     "static/js/runtime-main.8c3c2e9c.js",
     "static/css/2.de424728.chunk.css",
-    "static/js/2.386aacb8.chunk.js",
-    "static/css/main.07c729f3.chunk.css",
-    "static/js/main.7fb61105.chunk.js"
+    "static/js/2.dfa64993.chunk.js",
+    "static/css/main.6ad8a428.chunk.css",
+    "static/js/main.387f833b.chunk.js"
   ]
 }

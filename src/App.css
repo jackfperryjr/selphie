@@ -60,6 +60,15 @@ footer > div > a {
 .feed-text {
   margin-left: 19%;
 }
+.feed-timestamp {
+  margin-left: 20%;
+  margin-top: -8%;
+  font-size: 12px;
+}
+.flex-row-reverse > i,
+.flex-row-reverse > svg {
+  margin-left: 10px!important;
+}
 .app {
   text-align: center;
 }
@@ -422,6 +431,11 @@ label {
   }
   .feed-text {
     margin-left: 10%;
+  }
+  .feed-timestamp {
+    margin-left: 25%;
+    margin-top: -10%;
+    font-size: 12px;
   }
   .character-add {
     color: #9933CC;
