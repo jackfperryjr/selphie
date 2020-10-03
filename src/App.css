@@ -57,6 +57,9 @@ footer > div > a {
 .row-feed {
   border-bottom: 1px solid #37474F;
 }
+.feed-text {
+  margin-left: 19%;
+}
 .app {
   text-align: center;
 }
@@ -416,6 +419,9 @@ label {
     height: 50px;
     width: 50px;
     border-radius: 50%;
+  }
+  .feed-text {
+    margin-left: 10%;
   }
   .character-add {
     color: #9933CC;

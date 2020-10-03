@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6fbce745c5db8bbed68b763faf9e806a",
+    "revision": "2fc4afbb5b7c064d083d71f02175628a",
     "url": "/selphie/index.html"
   },
   {
-    "revision": "955108da75859673313c",
+    "revision": "1287a8f9ffb30d14bb7a",
     "url": "/selphie/static/css/2.de424728.chunk.css"
   },
   {
-    "revision": "61bcf280971df248e258",
-    "url": "/selphie/static/css/main.04a55489.chunk.css"
+    "revision": "d77e79d93643e0fcaf93",
+    "url": "/selphie/static/css/main.07c729f3.chunk.css"
   },
   {
-    "revision": "955108da75859673313c",
-    "url": "/selphie/static/js/2.6af0c1c3.chunk.js"
+    "revision": "1287a8f9ffb30d14bb7a",
+    "url": "/selphie/static/js/2.386aacb8.chunk.js"
   },
   {
     "revision": "e908922da528485359b3012549bf3244",
-    "url": "/selphie/static/js/2.6af0c1c3.chunk.js.LICENSE.txt"
+    "url": "/selphie/static/js/2.386aacb8.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "61bcf280971df248e258",
-    "url": "/selphie/static/js/main.45dee546.chunk.js"
+    "revision": "d77e79d93643e0fcaf93",
+    "url": "/selphie/static/js/main.7fb61105.chunk.js"
   },
   {
     "revision": "c26e25efa1b140e045e7",
