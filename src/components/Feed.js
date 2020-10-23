@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import { BrowserRouter as Route, Link, Redirect} from 'react-router-dom'
+import { BrowserRouter as Route, Link } from 'react-router-dom'
 import moment from 'moment'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
-import defaultImage from '../images/no-image.png'
-import selphie from '../icons/selphie.png'
 
 const useFetch = url => {
   const [feed, setFeed] = useState(null)

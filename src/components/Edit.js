@@ -5,7 +5,6 @@ import Button from 'react-bootstrap/Button'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import defaultImage from '../images/no-image.png'
-import selphie from '../icons/selphie.png'
 
 const useFetch = url => {
   const [character, setCharacter] = useState(null)
@@ -23,13 +22,11 @@ const useFetch = url => {
 function Edit(props) {
   const id = props.match.params.id
   const character = useFetch('https://www.moogleapi.com/api/v1/characters/' + id)
-  const [c, setCharacter] = useState({})
   const [isVisible, setVisible] = useState(false)
   const token = JSON.parse(localStorage.token)
   const [overlay, setOverlay] = useState(false)
   const [noAccess, setShow] = useState(false)
   const handleClose = () => setShow(false)
-  const handleShow = () => setShow(true)
 
   function handlePhotoUpload () {
     document.getElementById('upload-photo').click()
@@ -322,10 +319,11 @@ function Edit(props) {
     let x = character
     
     if (!x.pictures[0]) {
-      let obj = new Object()
-      obj.id = 'no-picture'
-      obj.url = defaultImage
-      obj.primary = 1
+      let obj = {
+        id: 'no-picture',
+        url: defaultImage,
+        primary: 1
+      }
       x.pictures.push(obj)
     } 
 

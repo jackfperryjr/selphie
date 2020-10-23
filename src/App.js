@@ -1,6 +1,6 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import { HashRouter as HashRouter } from 'react-router-dom'
+import { HashRouter } from 'react-router-dom'
 import { AuthContext } from './context/auth'
 import PrivateRoute from './PrivateRoute'
 import login from './components/Login'
@@ -25,7 +25,8 @@ function App(props) {
   return (
     <AuthContext.Provider value={{ authToken, setAuthToken: setToken }}>
       <HashRouter basename='/'>
-        <PrivateRoute exact path='/' component={index} />
+        <Route exact path='/' component={feed} />
+        <PrivateRoute exact path='/index/' component={index} />
         <Route exact path='/login/' component={login} />
         <Route exact path='/feed/' component={feed} />
         <PrivateRoute exact path='/profile/' component={profile} />

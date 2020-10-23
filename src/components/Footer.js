@@ -1,12 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { BrowserRouter as Router, Link} from 'react-router-dom'
 
 function Footer(props) {
-  let user = null
-  if (localStorage.user && localStorage.token) {
-    user = JSON.parse(localStorage.user)
-  }
-
   function handleClick (component) {
     localStorage.setItem('component', JSON.stringify(component))
   }

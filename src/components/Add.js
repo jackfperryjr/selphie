@@ -1,19 +1,16 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { BrowserRouter as Redirect} from 'react-router-dom'
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import moogleImage from '../icons/moogle.png'
-import selphie from '../icons/selphie.png'
 
 function Add(props) {
-  const [isVisible, setVisible] = useState(false)
   const token = JSON.parse(localStorage.token)
   const [overlay, setOverlay] = useState(false)
   const [show, setShow] = useState(false)
   const handleClose = () => setShow(false)
-  const handleShow = () => setShow(true)
 
   function handleCharacterAdd (e) {
     e.preventDefault()
@@ -101,7 +98,7 @@ function Add(props) {
               <div className='col-sm-12 col-md-12'>
                 <div className='row'>
                 <div className='col-sm-6 col-md-6'>
-                  <img className='img-character-profile tilt moogle' src={moogleImage} />
+                  <img className='img-character-profile tilt moogle' src={moogleImage} alt='Add a new character!' />
                   <p className='mt-5 font-weight-bold'>You'll be able to upload pictures and add/edit stats after the initial creation.</p>
                 </div>
                   <div className='col-sm-6 col-md-6'>

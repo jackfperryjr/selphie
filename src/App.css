@@ -16,6 +16,10 @@ body {
   z-index: 4000;
   border-bottom: 1px solid #37474F;
 }
+.feed-link {
+  margin-left: 12px;
+  font-size: 12px;
+}
 footer {
   position: fixed;
   bottom: 0;

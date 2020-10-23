@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { BrowserRouter as Redirect} from 'react-router-dom'
 import { useAuth } from '../context/auth'
-import selphie from '../icons/selphie.png'
 
 function Login(props) {
   const [isLoggedIn, setLoggedIn] = useState(false)
