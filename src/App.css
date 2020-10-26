@@ -1,6 +1,8 @@
 body {
-  background-color: #080808;
-  color: #fff;
+  /* background-color: #080808; */
+  background-color: #fff;
+  /* color: #fff; */
+  color: #000;
   height: 100%;
   overflow: auto;
 }
@@ -10,15 +12,15 @@ body {
   left: 0;
   width: 100%;
   height: 6vh;
-  background: #080808;
+  /* background: #080808; */
+  background: #fff;
   border:transparent;
   backdrop-filter: blur(5px);
   z-index: 4000;
   border-bottom: 1px solid #37474F;
 }
 .feed-link {
-  margin-left: 12px;
-  font-size: 12px;
+  display: none;
 }
 footer {
   position: fixed;
@@ -26,7 +28,8 @@ footer {
   left: 0;
   width: 100%;
   height: 70px;
-  background-color: #080808;
+  /* background-color: #080808; */
+  background-color: #fff;
   border-top: 1px solid #37474F;
   font-size: 26px;
 }
@@ -45,8 +48,10 @@ footer > div > a {
   height: 100%;
   padding-bottom: 120px;
   overflow-y: scroll!important;
-  background-color: #000;
-  color: #fff;
+  /* background-color: #000; */
+  background-color: #fff;
+  color: #000;
+  /* color: #fff; */
 }
 .pointer {
   cursor: pointer;
@@ -56,7 +61,8 @@ footer > div > a {
   border-radius: 5px;
 }
 .card-character > .text-center {
-  background-color: #000;
+  /* background-color: #000; */
+  background-color: #fff;
 }
 .row-feed {
   border-bottom: 1px solid #37474F;
@@ -158,7 +164,8 @@ footer > div > a {
   height: calc(150px + 5vmin);
   width: calc(150px + 5vmin);
   object-fit: contain;
-  background-color: #263238;
+  /* background-color: #263238; */
+  background-color: #fff;
   padding: 5px;
 }
 .img-character-profile-collection {
@@ -237,12 +244,16 @@ input[type="date"]:focus,
 input[type="number"]:focus  {
   outline: 0 none;
   border: 1px solid #263238;
-  color: #fff;
-  background-color: #080808;
+  /* color: #fff; */
+  color: #000;
+  /* background-color: #080808; */
+  background-color: #fff;
 }
 textarea, select {
-  background-color: #080808!important;
-  color: #fff!important;
+  /* background-color: #080808!important;
+  color: #fff!important; */
+  background-color: #fff!important;
+  color: #000!important;
 }
 .character-form-control {
   margin-top: 10px;
@@ -253,7 +264,8 @@ textarea, select {
   outline: 0 none;
   border: 1px solid #263238;
   border-radius: 5px;
-  color: #fff;
+  /* color: #fff; */
+  color: #000;
 }
 .form-container {
   margin: 0;
@@ -264,7 +276,8 @@ textarea, select {
   align-items: center;
   justify-content: flex-start;
   font-size: calc(10px + 2vmin);
-  color: #fff;
+  /* color: #fff; */
+  color: #000;
 }
 .floating-label { 
   position:relative; 
@@ -292,8 +305,10 @@ label {
   top:-7px;
   font-size:12px;
   font-weight: bold;
-  color:#fff;
-  background-color: #080808!important;
+  /* color:#fff;
+  background-color: #080808!important; */
+  color: #000;
+  background-color: #fff!important;
   height:20px;
   z-index: 1000;
   transition:0.2s ease-in-out all; 
@@ -305,8 +320,10 @@ label {
   top:3px;
   font-size:12px;
   font-weight: bold;
-  color:#fff;
-  background-color: #080808!important;
+  /* color:#fff;
+  background-color: #080808!important; */
+  color: #000;
+  background-color: #fff!important;
   height: 20px;
   z-index: 1000;
   transition:0.2s ease-in-out all; 
@@ -373,6 +390,11 @@ label {
     color: #000;
     height: 100%;
     overflow: auto;
+  }
+  .feed-link {
+    margin-left: 12px;
+    font-size: 12px;
+    display: inline;
   }
   .component {
     height: 100%;
