@@ -26,7 +26,6 @@ function Feed(props) {
     method: 'put'
     }).then(function(response) {
         if (response.status === 200) {
-            // TODO: update state?
             fetchData('https://www.moogleapi.com/api/v1/feeds')
         }
     })
