@@ -14,19 +14,20 @@ const useFetch = url => {
   }
 
   useEffect(() => { fetchData() }, [url])
-  return feed
+  return [feed, fetchData]
 }
 
 function Feed(props) {
-  const feed = useFetch('https://www.moogleapi.com/api/v1/feeds')
+  const [feed, fetchData] = useFetch('https://www.moogleapi.com/api/v1/feeds')
 
-  function handleReactionUpdate (e, id, reaction) {
+  async function handleReactionUpdate (e, id, reaction) {
     e.preventDefault()
     fetch('https://www.moogleapi.com/api/v1/feeds/'+ reaction +'/' + id, {
     method: 'put'
     }).then(function(response) {
         if (response.status === 200) {
             // TODO: update state?
+            fetchData('https://www.moogleapi.com/api/v1/feeds')
         }
     })
   }
