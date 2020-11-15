@@ -75,6 +75,7 @@ function Edit(props) {
           setShow(true)
           console.log('user cannot add pictures')
         } else {
+          setOverlay(false)
           console.log('failed')
           console.log(response.errors)
         }

@@ -16,7 +16,7 @@ function Navbar(props) {
               <span>
                 <Link to='/index'><img className='selphie-sm' src={selphie} alt='Selphie for MoogleApi' /></Link>
                 <Link to='/feed' className='feed-link'>feed</Link>
-                <span className='font-lobster'>selphie</span>
+                <Link to='/index' className='font-lobster'>selphie</Link>
                 <Link to='/add'><div className='character-add'><span className='small'>+</span><i className="fas fa-scroll"></i></div></Link>
                 <Link to='/profile'><img className='img-navbar' src={user.photo} alt={user.userName}/></Link>
               </span>

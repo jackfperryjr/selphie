@@ -58,7 +58,7 @@ footer > div > a {
   color: #37474F!important;
 }
 .footer-active {
-  color: #9933CC!important;
+  color: #007bff!important;
 }
 .component {
   position: fixed;
@@ -140,12 +140,12 @@ footer > div > a {
   font-size: 14px;
 }
 .fa-superpowers {
-  color: #9933CC;
+  color: #007bff;
   font-size: 24px;
 }
 .img-navbar {
   position: fixed;
-  top: calc(3px + 1vmin);
+  top: calc(5px + 1vmin);
   right: calc(10px + 1vmin);
   border-radius: 50%;
   height: calc(18px + 3vmin);
@@ -161,7 +161,7 @@ footer > div > a {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #9933CC;
+  background-color: #007bff;
   color: #fff;
   border-radius: 50%;
   position: fixed;
@@ -441,7 +441,7 @@ label {
     background-color: #fff;
   }
   .fa-superpowers {
-    color: #9933CC;
+    color: #007bff;
   }
   .loader {
     top: 40%;
@@ -497,7 +497,7 @@ label {
     font-size: 12px;
   }
   .character-add {
-    color: #9933CC;
+    color: #007bff;
     position: fixed;
     top: calc(3px + 1vmin);
     right: calc(60px + 2vmin);
@@ -505,7 +505,7 @@ label {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #9933CC;
+    background-color: #007bff;
     color: #fff;
     border-radius: 50%;
     position: fixed;
