@@ -42,7 +42,7 @@ function Feed(props) {
                 <>
                 <div className='row row-feed mx-3 mb-2 pt-2'>
                     <div className='col-xs-1 col-sm-1 col-md-5 col-lg-5'>
-                        <img className='img-feed' src={x.userPhoto} alt={x.userName} />
+                        <img className='img-feed' decoding='sync' src={x.userPhoto} alt={x.userName} />
                         <span className='ml-3 align-top text-muted'>{x.userName}</span>
                         <p className='feed-timestamp text-muted'>{moment(x.timeStamp).local().format('MMMM D, YYYY [at] h:mm a')}</p>
                     </div>
