@@ -24,7 +24,7 @@ function App(props) {
 
   return (
     <AuthContext.Provider value={{ authToken, setAuthToken: setToken }}>
-      <Router basename={process.env.PUBLIC_URL}>
+      <HashRouter basename={process.env.PUBLIC_URL}>
         <Route exact path='/' component={feed} />
         <PrivateRoute exact path='/index/' component={index} />
         <Route exact path='/login/' component={login} />
@@ -32,7 +32,7 @@ function App(props) {
         <PrivateRoute exact path='/profile/' component={profile} />
         <PrivateRoute exact path='/add/' component={add} />
         <PrivateRoute exact path='/edit/:id/' component={edit} />
-      </Router>
+      </HashRouter>
     </AuthContext.Provider>
   )
 }
