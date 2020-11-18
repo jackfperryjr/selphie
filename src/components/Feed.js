@@ -51,11 +51,11 @@ function Feed(props) {
                             <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 text-left feed-text'>
                                 {x.update === 1 ? <span><Link to={'/edit/' + x.characterId}>{x.characterName}</Link> had something updated in their general information.</span> : '' }
                                 {x.addition === 1 ? <span>{x.characterName} was added to the API!</span> : '' }
-                                {x.deletion === 1 ? <span>{x.characterName} was deleted :(</span> : '' }
+                                {x.deletion === 1 ? <span>{x.characterName} was deleted. Sadface. </span> : '' }
                                 {x.photoUpdate === 1 ? <span>{x.userFirstName} changed <Link to={'/edit/' + x.characterId}>{x.characterName}</Link>'s photo. Not sure why.</span> : '' }
                                 {x.statUpdate === 1 ? <span>{x.characterName} had some stats updated.</span> : '' }
                                 {x.statAddition === 1 ? <span><Link to={'/edit/' + x.characterId}>{x.characterName}</Link> had some stats added by {x.userFirstName}. I hope they know what they're doing.</span> : '' }
-                                {x.statDeletion === 1 ? <span>{x.characterName} had some stats deleted. I guess they weren't needed.</span> : '' }
+                                {x.statDeletion === 1 && x.deletion === 0 ? <span>{x.characterName} had some stats deleted. I guess they weren't needed.</span> : '' }
                             </div>
                         </div>
                         <div className='row text-muted pb-3 flex-row-reverse'>

@@ -158,7 +158,8 @@ footer > div > a {
   border-radius: 50%;
 }
 .character-add {
-  display: flex;
+  display: none;
+  /* display: flex;
   justify-content: center;
   align-items: center;
   background-color: #007bff;
@@ -169,7 +170,7 @@ footer > div > a {
   right: calc(10px + 2vmin);
   height: calc(50px + 1vmin);
   width: calc(50px + 1vmin);
-  font-size: calc(18px + 1vmin);
+  font-size: calc(18px + 1vmin); */
 }
 .img-character {
   height: calc(50px + 5vmin);
