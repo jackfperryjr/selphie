@@ -50,11 +50,11 @@ function Feed(props) {
                         <div className='row mb-3'>
                             <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 text-left feed-text'>
                                 {x.update === 1 ? <span><Link to={'/edit/' + x.characterId}>{x.characterName}</Link> had something updated in their general information.</span> : '' }
-                                {x.addition === 1 ? <span>{x.characterName} was added to the API!</span> : '' }
-                                {x.deletion === 1 ? <span>{x.characterName} was deleted. Sadface. </span> : '' }
-                                {x.photoUpdate === 1 ? <span>{x.userFirstName} changed <Link to={'/edit/' + x.characterId}>{x.characterName}</Link>'s photo. Not sure why.</span> : '' }
+                                {x.addition === 1 ? <span><Link to={'/edit/' + x.characterId}>{x.characterName}</Link> was added to the API! Let's everybody welcome <Link to={'/edit/' + x.characterId}>{x.characterName}</Link> to the team!</span> : '' }
+                                {x.deletion === 1 ? <span>{x.characterName} was deleted from the API. This is a sad day for the team. Let's all wish {x.characterName} the best in their success. May you find a place in a new API in the near future! (Coming soon, probably.)</span> : '' }
+                                {x.photoUpdate === 1 ? <span>{x.userFirstName} changed <Link to={'/edit/' + x.characterId}>{x.characterName}</Link>'s photo. I guess it was time for a change.</span> : '' }
                                 {x.statUpdate === 1 ? <span>{x.characterName} had some stats updated.</span> : '' }
-                                {x.statAddition === 1 ? <span><Link to={'/edit/' + x.characterId}>{x.characterName}</Link> had some stats added by {x.userFirstName}. I hope they know what they're doing.</span> : '' }
+                                {x.statAddition === 1 ? <span><Link to={'/edit/' + x.characterId}>{x.characterName}</Link> had some stats added by {x.userFirstName}. Life is full of leveling up.</span> : '' }
                                 {x.statDeletion === 1 && x.deletion === 0 ? <span>{x.characterName} had some stats deleted. I guess they weren't needed.</span> : '' }
                             </div>
                         </div>

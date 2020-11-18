@@ -46,7 +46,7 @@ function Edit(props) {
       setOverlay(true)
       let payload = new FormData()
       if (photoId === 'no-picture') {
-        fetchUrl = 'https://www.moogleapi.com/api/v1/pictures/add/'
+        fetchUrl = 'https://www.moogleapi.com/api/v1/pictures/update/'
       } else {
         fetchUrl = 'https://www.moogleapi.com/api/v1/pictures/update/'
         payload.append('id', photoId)
