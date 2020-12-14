@@ -38,7 +38,7 @@ function Profile(props) {
       payload.append('birthdate', (birthdate === '') ? user.birthDate : birthdate)
       payload.append('city', (city === '') ? user.city : city)
       payload.append('state', (state === '') ? user.state : state)
-      fetch('https://chocoboapi.azurewebsites.net/v1/manage/update', {
+      fetch('https://chocobo.moogleapi.com/v1/manage/update', {
         method: 'put',
         headers: {
           'Authorization': 'Bearer ' + token

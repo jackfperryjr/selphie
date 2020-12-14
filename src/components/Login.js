@@ -29,7 +29,7 @@ function Login(props) {
         password: password,
         audience: 'MoogleApi'
       }
-      fetch('https://chocoboapi.azurewebsites.net/v1/account/login', {
+      fetch('https://chocobo.moogleapi.com/v1/account/login', {
         method: 'post',
         headers: {
           Accept: 'application/json, text/plain, */*',
