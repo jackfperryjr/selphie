@@ -14,11 +14,11 @@ import '../node_modules/react-bootstrap/dist/react-bootstrap.min.js'
 import './App.css'
 
 function App(props) {
-  const existingToken = JSON.parse(localStorage.getItem('token'));
-  const [authToken, setAuthToken] = useState(existingToken);
+  const existingToken = JSON.parse(localStorage.getItem('accessToken'))
+  const [authToken, setAuthToken] = useState(existingToken)
   
   const setToken = (data) => {
-    localStorage.setItem('token', JSON.stringify(data));
+    localStorage.setItem('accessToken', JSON.stringify(data))
     setAuthToken(data);
   }
 

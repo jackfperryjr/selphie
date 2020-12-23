@@ -27,7 +27,7 @@ function Login(props) {
       const payload = {
         username: username,
         password: password,
-        audience: 'MoogleApi'
+        audience: 'moogleAPI'
       }
       fetch('https://chocobo.moogleapi.com/v1/account/login', {
         method: 'post',
@@ -38,9 +38,10 @@ function Login(props) {
         body: JSON.stringify(payload)
       }).then(response => response.json())
         .then(function(response){
-          if (response.token) {
-            setAuthToken(response.token)
+          if (response.accessToken) {
+            setAuthToken(response.accessToken)
             setLoggedIn(true)
+            localStorage.setItem('refreshToken', JSON.stringify(response.refreshToken))
             localStorage.setItem('user', JSON.stringify(response.user))
             localStorage.setItem('component', JSON.stringify('index'))
           } else {

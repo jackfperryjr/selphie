@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { BrowserRouter as Redirect} from 'react-router-dom'
+import { refresh } from '../utility'
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 import Navbar from '../components/Navbar'
@@ -7,12 +8,12 @@ import Footer from '../components/Footer'
 import moogleImage from '../icons/moogle.png'
 
 function Add(props) {
-  const token = JSON.parse(localStorage.token)
   const [overlay, setOverlay] = useState(false)
   const [show, setShow] = useState(false)
   const handleClose = () => setShow(false)
 
   function handleCharacterAdd (e) {
+    refresh(JSON.parse(localStorage.accessToken))
     e.preventDefault()
     if (validateForm()) {
       setOverlay(true)
@@ -30,7 +31,7 @@ function Add(props) {
       fetch('https://www.moogleapi.com/api/v1/characters/add', {
         method: 'post',
         headers: {
-          'Authorization': 'Bearer ' + token
+          'Authorization': 'Bearer ' + JSON.parse(localStorage.accessToken)
         },
         body: payload
       }).then(function(response) {
@@ -40,9 +41,10 @@ function Add(props) {
             return <Redirect to={'/edit/' + data.character.id} />
           })
         } else if (response.status === 401) {
-          localStorage.clear()
-          props.history.push('/login')
-          return <Redirect to='/login' />
+          // localStorage.clear()
+          // props.history.push('/login')
+          // return <Redirect to='/login' />
+          console.log('Still got a 401, bro.')
         } else if (response.status === 403 || response.status === 405) {
           setOverlay(false)
           setShow(true)

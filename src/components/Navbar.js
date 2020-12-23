@@ -4,7 +4,7 @@ import selphie from '../icons/selphie.png'
 
 function Navbar(props) {
     let user = null
-    if (localStorage.user && localStorage.token) {
+    if (localStorage.user && localStorage.accessToken) {
       user = JSON.parse(localStorage.user)
     }
 

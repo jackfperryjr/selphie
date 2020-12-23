@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Redirect} from 'react-router-dom'
+import { refresh } from '../utility'
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 import Navbar from '../components/Navbar'
@@ -23,7 +24,6 @@ function Edit(props) {
   const id = props.match.params.id
   const character = useFetch('https://www.moogleapi.com/api/v1/characters/' + id)
   const [isVisible, setVisible] = useState(false)
-  const token = JSON.parse(localStorage.token)
   const [overlay, setOverlay] = useState(false)
   const [noAccess, setShow] = useState(false)
   const handleClose = () => setShow(false)
@@ -40,6 +40,7 @@ function Edit(props) {
   }
 
   function handlePhotoUpdate (e, photoId) {
+    refresh(JSON.parse(localStorage.accessToken))
     e.preventDefault()
     let fetchUrl
     if (validateForm()) {
@@ -55,10 +56,11 @@ function Edit(props) {
       payload.append('url', document.getElementById(''+photoId+'').src)
       payload.append('primary', 1)
       payload.append('collectionId', id)
+      let accessToken = JSON.parse(localStorage.accessToken)
       fetch(fetchUrl, {
         method: 'post',
         headers: {
-          'Authorization': 'Bearer ' + token
+          'Authorization': 'Bearer ' + accessToken
         }, 
         body: payload
       }).then(function(response) {
@@ -67,9 +69,9 @@ function Edit(props) {
           //props.history.push('/edit/' + id)
           //return <Redirect to={'/edit/' + id} />
         } else if (response.status === 401) {
-          localStorage.clear()
-          props.history.push('/login')
-          return <Redirect to='/login' />
+          // localStorage.clear()
+          // props.history.push('/login')
+          // return <Redirect to='/login' />
         } else if (response.status === 403) {
           setOverlay(false)
           setShow(true)
@@ -84,6 +86,7 @@ function Edit(props) {
   }
 
   function handleStatAdd (e) {
+    refresh(JSON.parse(localStorage.accessToken))
     e.preventDefault()
     if (validateForm(1)) {
       setOverlay(true)
@@ -100,10 +103,11 @@ function Edit(props) {
       payload.append('agility', document.getElementById('1').querySelector('[name="agility"]').value)
       payload.append('spirit', document.getElementById('1').querySelector('[name="spirit"]').value)
       payload.append('collectionId', id)
+      let accessToken = JSON.parse(localStorage.accessToken)
       fetch('https://www.moogleapi.com/api/v1/stats/add/', {
         method: 'post',
         headers: {
-          'Authorization': 'Bearer ' + token
+          'Authorization': 'Bearer ' + accessToken
         }, 
         body: payload
       }).then(function(response) {
@@ -111,9 +115,9 @@ function Edit(props) {
           props.history.push('/edit/' + id)
           return <Redirect to={'/edit/' + id} />
         } else if (response.status === 401) {
-          localStorage.clear()
-          props.history.push('/login')
-          return <Redirect to='/login' />
+          // localStorage.clear()
+          // props.history.push('/login')
+          // return <Redirect to='/login' />
         } else if (response.status === 403) {
           setOverlay(false)
           setShow(true)
@@ -129,6 +133,7 @@ function Edit(props) {
   }
 
   function handleStatUpdate (e, statId) {
+    refresh(JSON.parse(localStorage.accessToken))
     e.preventDefault()
     if (validateForm()) {
       setOverlay(true)
@@ -145,10 +150,11 @@ function Edit(props) {
       payload.append('magicDefense', document.getElementById(''+statId+'').querySelector('[name="magicDefense"]').value)
       payload.append('agility', document.getElementById(''+statId+'').querySelector('[name="agility"]').value)
       payload.append('spirit', document.getElementById(''+statId+'').querySelector('[name="spirit"]').value)
+      let accessToken = JSON.parse(localStorage.accessToken)
       fetch('https://www.moogleapi.com/api/v1/stats/update/' + statId, {
         method: 'put',
         headers: {
-          'Authorization': 'Bearer ' + token
+          'Authorization': 'Bearer ' + accessToken
         }, 
         body: payload
       }).then(function(response) {
@@ -156,9 +162,9 @@ function Edit(props) {
           props.history.push('/edit/' + id)
           return <Redirect to={'/edit/' + id} />
         } else if (response.status === 401) {
-          localStorage.clear()
-          props.history.push('/login')
-          return <Redirect to='/login' />
+          // localStorage.clear()
+          // props.history.push('/login')
+          // return <Redirect to='/login' />
         } else if (response.status === 403) {
           setOverlay(false)
           setShow(true)
@@ -174,22 +180,24 @@ function Edit(props) {
   }
 
   function handleStatDelete (e, statId) {
+    refresh(JSON.parse(localStorage.accessToken))
     e.preventDefault()
     if (validateForm()) {
       setOverlay(true)
+      let accessToken = JSON.parse(localStorage.accessToken)
       fetch('https://www.moogleapi.com/api/v1/stats/delete/' + statId, {
         method: 'delete',
         headers: {
-          'Authorization': 'Bearer ' + token
+          'Authorization': 'Bearer ' + accessToken
         }
       }).then(function(response) {
         if (response.status === 200) {
           props.history.push('/edit/' + id)
           return <Redirect to={'/edit/' + id} />
         } else if (response.status === 401) {
-          localStorage.clear()
-          props.history.push('/login')
-          return <Redirect to='/login' />
+          // localStorage.clear()
+          // props.history.push('/login')
+          // return <Redirect to='/login' />
         } else if (response.status === 403) {
           setOverlay(false)
           setShow(true)
@@ -205,6 +213,7 @@ function Edit(props) {
   }
 
   function handleCharacterUpdate (e) {
+    refresh(JSON.parse(localStorage.accessToken))
     e.preventDefault()
     if (validateForm()) {
       setOverlay(true)
@@ -220,10 +229,11 @@ function Edit(props) {
       payload.append('weight', document.querySelector('[name="weight"]').value)
       payload.append('origin', document.querySelector('[name="origin"]').value)
       payload.append('description', document.querySelector('[name="description"]').value)
+      let accessToken = JSON.parse(localStorage.accessToken)
       fetch('https://www.moogleapi.com/api/v1/characters/update/' + id, {
         method: 'put',
         headers: {
-          'Authorization': 'Bearer ' + token
+          'Authorization': 'Bearer ' + accessToken
         },
         body: payload
       }).then(function(response) {
@@ -232,10 +242,10 @@ function Edit(props) {
           props.history.push('/edit/' + id)
           return <Redirect to={'/edit/' + id} />
         } else if (response.status === 401) {
-          setOverlay(false)
-          localStorage.clear()
-          props.history.push('/login')
-          return <Redirect to='/login' />
+          // setOverlay(false)
+          // localStorage.clear()
+          // props.history.push('/login')
+          // return <Redirect to='/login' />
         } else if (response.status === 403) {
           setOverlay(false)
           setShow(true)
@@ -251,22 +261,24 @@ function Edit(props) {
   }
 
   function handleCharacterDelete (e) {
+    refresh(JSON.parse(localStorage.accessToken))
     e.preventDefault()
     if (validateForm()) {
       setOverlay(true)
+      let accessToken = JSON.parse(localStorage.accessToken)
       fetch('https://www.moogleapi.com/api/v1/characters/delete/' + id, {
         method: 'delete',
         headers: {
-          'Authorization': 'Bearer ' + token
+          'Authorization': 'Bearer ' + accessToken
         }
       }).then(function(response) {
         if (response.status === 200) {
           props.history.push('/index')
           return <Redirect to='/index' />
         } else if (response.status === 401) {
-          localStorage.clear()
-          props.history.push('/login')
-          return <Redirect to='/login' />
+          // localStorage.clear()
+          // props.history.push('/login')
+          // return <Redirect to='/login' />
         } else if (response.status === 403) {
           setOverlay(false)
           setShow(true)

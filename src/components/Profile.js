@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { BrowserRouter as Redirect} from 'react-router-dom'
+import { refresh } from '../utility'
 import moment from 'moment'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
@@ -24,7 +25,7 @@ function Profile(props) {
 
   function handleUserUpdate (e) {
     e.preventDefault()
-    const token = localStorage.token
+    refresh(JSON.parse(localStorage.accessToken))
     const user = JSON.parse(localStorage.user)
     if (validateForm()) {
       let payload = new FormData()
@@ -38,10 +39,12 @@ function Profile(props) {
       payload.append('birthdate', (birthdate === '') ? user.birthDate : birthdate)
       payload.append('city', (city === '') ? user.city : city)
       payload.append('state', (state === '') ? user.state : state)
+      let accessToken = JSON.parse(localStorage.accessToken)
+      debugger
       fetch('https://chocobo.moogleapi.com/v1/manage/update', {
         method: 'put',
         headers: {
-          'Authorization': 'Bearer ' + token
+          'Authorization': 'Bearer ' + accessToken
         },
         body: payload
       }).then(response => response.json())
