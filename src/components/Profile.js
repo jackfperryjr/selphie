@@ -16,6 +16,10 @@ function Profile(props) {
   const [state, setState] = useState('')
   const [photo, setPhoto] = useState('')
   const user = JSON.parse(localStorage.user)
+  var photos = user.photos.filter(function(e){
+    return e.portrait == 1
+  });
+  const src = photos[0].url
 
   function handleLogout () {
     localStorage.clear()
@@ -90,7 +94,7 @@ function Profile(props) {
       <Navbar />
       <div className='form-container form-container-profile component'>
         <div className='profile-container'>
-          <img id='profile-photo' className='profile-photo' src={user.photo} alt={user.userName} onClick={handlePhotoUpload}/>
+          <img id='profile-photo' className='profile-photo' src={src} alt={user.userName} onClick={handlePhotoUpload}/>
         </div>
         <form name='profile-form' id='profile-form' className='profile-form' encType='multipart/form-data' method='put'>
           <p className='font-weight-bold login-username'>{user.userName}</p>

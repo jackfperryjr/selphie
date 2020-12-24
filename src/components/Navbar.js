@@ -3,10 +3,16 @@ import { BrowserRouter as Router, Link} from 'react-router-dom'
 import selphie from '../icons/selphie.png'
 
 function Navbar(props) {
-    let user = null
-    if (localStorage.user && localStorage.accessToken) {
-      user = JSON.parse(localStorage.user)
-    }
+  let user = null
+  let src
+  if (localStorage.user && localStorage.accessToken) {
+    user = JSON.parse(localStorage.user)
+    var photos = user.photos.filter(function(e){
+      return e.portrait == 1
+    });
+    
+    src = photos[0].url
+  }
 
   return (
     <nav className='navbar navbar-expand navbar-light'>
@@ -18,7 +24,7 @@ function Navbar(props) {
                 <Link to='/feed' className='feed-link'>feed</Link>
                 <Link to='/index' className='font-lobster'>selphie</Link>
                 <Link to='/add'><div className='character-add'><i className="fas fa-user-plus"></i></div></Link>
-                <Link to='/profile'><img className='img-navbar' src={user.photo} alt={user.userName}/></Link>
+                <Link to='/profile'><img className='img-navbar' src={src} alt={user.userName}/></Link>
               </span>
 
           : <Link to='/login' className='font-lobster'>selphie</Link>
